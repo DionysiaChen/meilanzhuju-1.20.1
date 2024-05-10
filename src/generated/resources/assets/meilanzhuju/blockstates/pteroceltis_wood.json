@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "meilanzhuju:block/pteroceltis_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "meilanzhuju:block/pteroceltis_wood"
+    },
+    "axis=z": {
+      "model": "meilanzhuju:block/pteroceltis_wood_horizontal",
+      "x": 90
+    }
+  }
+}

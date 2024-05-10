@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "meilanzhuju:block/stripped_pteroceltis_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "meilanzhuju:block/stripped_pteroceltis_log"
+    },
+    "axis=z": {
+      "model": "meilanzhuju:block/stripped_pteroceltis_log_horizontal",
+      "x": 90
+    }
+  }
+}

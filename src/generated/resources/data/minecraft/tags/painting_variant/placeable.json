@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "meilanzhuju:bird",
+      "required": false
+    },
+    {
+      "id": "meilanzhuju:music",
+      "required": false
+    }
+  ]
+}

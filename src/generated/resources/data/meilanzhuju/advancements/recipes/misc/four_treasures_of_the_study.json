@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ink_brush": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "meilanzhuju:ink_brush"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "meilanzhuju:four_treasures_of_the_study"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_ink_brush",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "meilanzhuju:four_treasures_of_the_study"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "meilanzhuju:block/pteroceltis_log_top",
+    "side": "meilanzhuju:block/pteroceltis_log"
+  }
+}

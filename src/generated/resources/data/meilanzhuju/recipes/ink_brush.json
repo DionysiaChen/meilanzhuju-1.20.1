@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "meilanzhuju:goat_wool"
+    },
+    {
+      "item": "meilanzhuju:dried_bamboo"
+    }
+  ],
+  "result": {
+    "item": "meilanzhuju:ink_brush"
+  }
+}

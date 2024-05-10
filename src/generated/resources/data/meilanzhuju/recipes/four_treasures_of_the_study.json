@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "meilanzhuju:ink_brush"
+    },
+    {
+      "item": "meilanzhuju:inkstick"
+    },
+    {
+      "item": "meilanzhuju:xuan_paper"
+    },
+    {
+      "item": "meilanzhuju:inkstone"
+    }
+  ],
+  "result": {
+    "item": "meilanzhuju:four_treasures_of_the_study"
+  }
+}

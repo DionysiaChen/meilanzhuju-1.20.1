@@ -1,0 +1,52 @@
+{
+  "creativetab.meilanzhuju_tab": "Meilanzhuju",
+
+  "block.meilanzhuju.pteroceltis_log": "Pteroceltis Log",
+  "block.meilanzhuju.pteroceltis_wood": "Pteroceltis Wood",
+  "block.meilanzhuju.stripped_pteroceltis_log": "Stripped Pteroceltis Log",
+  "block.meilanzhuju.stripped_pteroceltis_wood": "Stripped Pteroceltis Wood",
+  "block.meilanzhuju.pteroceltis_planks": "Pteroceltis Planks",
+  "block.meilanzhuju.pteroceltis_leaves": "Pteroceltis Leaves",
+  "block.meilanzhuju.pteroceltis_bark": "Pteroceltis Bark",
+  "block.meilanzhuju.pteroceltis_sapling": "Pteroceltis Sapling",
+  "item.meilanzhuju.tung_fruit": "Tung Fruit",
+  "block.meilanzhuju.tung_sapling": "Tung Sapling",
+  "item.meilanzhuju.tung_oil": "Tung Oil",
+  "block.meilanzhuju.tung_log": "Tung Log",
+  "block.meilanzhuju.tung_planks": "Tung Planks",
+  "block.meilanzhuju.tung_leaves": "Tung Leaves",
+
+  "item.meilanzhuju.ink_brush": "Ink Brush",
+  "item.meilanzhuju.goat_wool": "Goat Wool",
+
+  "item.meilanzhuju.inkstick": "Inkstick",
+  "block.meilanzhuju.oil_lamp": "Oil Lamp",
+  "item.meilanzhuju.oil_lamp_cap": "Oil Lamp Cap",
+  "block.meilanzhuju.tung_oil_smoke": "Tung Oil Smoke",
+  "block.meilanzhuju.gelatin": "Gelatin",
+
+  "item.meilanzhuju.four_treasures_of_the_study": "Four Treasures of the Study",
+
+  "item.meilanzhuju.xuan_paper": "Xuan Paper",
+  "item.meilanzhuju.straw": "Straw",
+
+  "item.meilanzhuju.inkstone": "Inkstone",
+  "item.meilanzhuju.cinnabar": "Cinnabar",
+
+  "block.meilanzhuju.oak_table": "Oak Table",
+
+
+  "block.meilanzhuju.cinnabar_ore": "Cinnabar Ore",
+
+  "item.meilanzhuju.bird_sketch": "Sketch of Bird",
+  "item.meilanzhuju.portrait_sketch": "Sketch of Portrait",
+  "item.meilanzhuju.mountain_sketch": "Sketch of Mountain",
+
+
+
+  "block.meilanzhuju.rice_seeds": "Rice Seeds",
+
+  "block.meilanzhuju.dried_bamboo": "Dried Bamboo"
+
+
+}

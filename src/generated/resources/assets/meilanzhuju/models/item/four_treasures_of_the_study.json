@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "meilanzhuju:item/four_treasures_of_the_study"
+  }
+}

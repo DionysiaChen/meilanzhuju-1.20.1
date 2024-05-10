@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "meilanzhuju:tung_sapling"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tung_fruit": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "meilanzhuju:tung_fruit"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_tung_fruit",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "meilanzhuju:tung_sapling"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,12 @@
+{
+  "type": "meilanzhuju:stock_pot_cooking",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:leather"
+    }
+  ],
+  "result": {
+    "item": "meilanzhuju:gelatin"
+  }
+}

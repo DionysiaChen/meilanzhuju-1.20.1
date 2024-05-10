@@ -1,0 +1,50 @@
+{
+  "creativetab.meilanzhuju_tab": "梅兰竹菊",
+
+  "block.meilanzhuju.pteroceltis_log": "青檀原木",
+  "block.meilanzhuju.pteroceltis_wood": "青檀木",
+  "block.meilanzhuju.stripped_pteroceltis_log": "去皮青檀原木",
+  "block.meilanzhuju.stripped_pteroceltis_wood": "去皮青檀木",
+  "block.meilanzhuju.pteroceltis_planks": "青檀木板",
+  "block.meilanzhuju.pteroceltis_leaves": "青檀树叶",
+  "item.meilanzhuju.pteroceltis_bark": "青檀树皮",
+  "block.meilanzhuju.pteroceltis_sapling": "青檀树苗",
+  "item.meilanzhuju.tung_fruit": "油桐果",
+  "block.meilanzhuju.tung_sapling": "油桐树苗",
+  "item.meilanzhuju.tung_oil": "桐油",
+  "block.meilanzhuju.tung_log": "油桐原木",
+  "block.meilanzhuju.tung_planks": "油桐木板",
+  "block.meilanzhuju.tung_leaves": "油桐树叶",
+
+  "item.meilanzhuju.ink_brush": "毛笔",
+  "item.meilanzhuju.goat_wool": "山羊毛",
+
+  "item.meilanzhuju.inkstick": "墨锭",
+  "block.meilanzhuju.oil_lamp": "油灯",
+  "item.meilanzhuju.oil_lamp_cap": "油灯盖",
+  "block.meilanzhuju.tung_oil_smoke": "桐油烟",
+  "block.meilanzhuju.gelatin": "明胶",
+
+
+  "item.meilanzhuju.four_treasures_of_the_study": "文房四宝",
+
+  "item.meilanzhuju.xuan_paper": "宣纸",
+  "item.meilanzhuju.straw": "Straw",
+
+  "item.meilanzhuju.inkstone": "砚台",
+
+  "item.meilanzhuju.cinnabar": "朱砂",
+
+  "block.meilanzhuju.oak_table": "橡木桌子",
+
+  "block.meilanzhuju.cinnabar_ore": "朱砂矿石",
+
+  "item.meilanzhuju.bird_sketch": "草稿-鸟",
+  "item.meilanzhuju.portrait_sketch": "草稿-肖像",
+  "item.meilanzhuju.mountain_sketch": "草稿-山",
+
+  "block.meilanzhuju.rice_seeds": "水稻种子",
+
+  "block.meilanzhuju.dried_bamboo": "竹子(已杀青)"
+
+}

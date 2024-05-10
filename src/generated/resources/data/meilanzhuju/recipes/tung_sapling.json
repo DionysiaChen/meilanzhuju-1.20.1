@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "meilanzhuju:tung_fruit"
+    }
+  ],
+  "result": {
+    "item": "meilanzhuju:tung_sapling"
+  }
+}
