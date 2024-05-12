@@ -16,7 +16,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -51,12 +50,14 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
                     .strength(2f), UniformInt.of(1,3)));
 
+    //Machines
     public static final RegistryObject<Block> OIL_LAMP = registerBlock("oil_lamp",
             () -> new OilLampBlock(BlockBehaviour.Properties.of()
                     .lightLevel(OilLampBlock.LIGHT_EMISSION)));
-
+    public static final RegistryObject<Block> PRESS = registerBlock("press",
+            () -> new PressBlock(BlockBehaviour.Properties.of().strength(0.5f)));
     public static final RegistryObject<Block> STOCK_POT = registerBlock("stock_pot",
-            () -> new StockPotBlock(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+            () -> new StockPotBlock(BlockBehaviour.Properties.of().strength(0.5f)));
 
     //Crops and saplings
     public static final RegistryObject<Block> RICE_CROP = BLOCKS.register("rice_crop",

@@ -3,13 +3,14 @@ package net.dionysiachen.meilanzhuju;
 import com.mojang.logging.LogUtils;
 import net.dionysiachen.meilanzhuju.block.ModBlocks;
 import net.dionysiachen.meilanzhuju.block.entity.ModBlockEntities;
+import net.dionysiachen.meilanzhuju.datagen.util.ModLootModifiers;
 import net.dionysiachen.meilanzhuju.entity.ModEntities;
 import net.dionysiachen.meilanzhuju.entity.client.MuskDeerRenderer;
 import net.dionysiachen.meilanzhuju.item.ModCreativeModeTabs;
 import net.dionysiachen.meilanzhuju.item.ModItems;
-import net.dionysiachen.meilanzhuju.datagen.util.ModLootModifiers;
 import net.dionysiachen.meilanzhuju.recipe.ModRecipes;
 import net.dionysiachen.meilanzhuju.screen.ModMenuTypes;
+import net.dionysiachen.meilanzhuju.screen.PressScreen;
 import net.dionysiachen.meilanzhuju.screen.StockPotScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -72,10 +73,13 @@ public class MEILANZHUJU {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            event.enqueueWork(() -> MenuScreens.register(ModMenuTypes.STOCK_POT_MENU.get(), StockPotScreen::new));
+            event.enqueueWork(() -> {
+                MenuScreens.register(ModMenuTypes.STOCK_POT_MENU.get(), StockPotScreen::new);
+                MenuScreens.register(ModMenuTypes.PRESS_MENU.get(), PressScreen::new);
 
-            EntityRenderers.register(ModEntities.MUSK_DEER.get(), MuskDeerRenderer::new);
+                EntityRenderers.register(ModEntities.MUSK_DEER.get(), MuskDeerRenderer::new);
 
+            });
         }
     }
 }

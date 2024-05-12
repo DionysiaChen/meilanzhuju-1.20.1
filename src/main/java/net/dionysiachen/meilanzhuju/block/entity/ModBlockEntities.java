@@ -17,6 +17,11 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(StockPotBlockEntity::new,
                             ModBlocks.STOCK_POT.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<PressBlockEntity>> PRESS_BE =
+            BLOCK_ENTITIES.register("press_be", () ->
+                    BlockEntityType.Builder.of(PressBlockEntity::new,
+                            ModBlocks.PRESS.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

@@ -1,8 +1,8 @@
-// 1.20.1	2024-05-09T23:57:10.3919977	Block States: meilanzhuju
+// 1.20.1	2024-05-12T01:39:14.0133541	Block States: meilanzhuju
 5b7d5c96cdb4dffaa23ece73084211903e4e4d50 assets/meilanzhuju/blockstates/cinnabar_ore.json
 f9a642d7aec891f21cc85b36b11a34372c57229f assets/meilanzhuju/blockstates/mung_bean_crop.json
 c33f942df8fcf64710ff06f65b199be99afa17e1 assets/meilanzhuju/blockstates/oak_table.json
-d494f682f49315de46656ae1d307ce29dd6d2600 assets/meilanzhuju/blockstates/oil_lamp.json
+fae2f02daaea5150401ca28205e3dbbf6e6bbc1c assets/meilanzhuju/blockstates/oil_lamp.json
 80409c8c5ab7f22eba9b3599962e27e9d1882100 assets/meilanzhuju/blockstates/pteroceltis_leaves.json
 dae872adf4bdcff375089855bda50bf117453e24 assets/meilanzhuju/blockstates/pteroceltis_log.json
 e1f5d5d27cd9291c6c6d90ecca2d60b00ed3a2f1 assets/meilanzhuju/blockstates/pteroceltis_planks.json
@@ -57,6 +57,7 @@ f09b1482e32339802304bdafea27698e81fa0987 assets/meilanzhuju/models/item/pterocel
 45d5805faa68b4322642098c0e176b44fac81084 assets/meilanzhuju/models/item/pteroceltis_log.json
 1987454f95b728758b6a4027f89c4c48b5b5c6f7 assets/meilanzhuju/models/item/pteroceltis_planks.json
 5ecba704971e61e2feefb665ae281da9f257fd3f assets/meilanzhuju/models/item/pteroceltis_wood.json
+d5b145198953e1dea79b7a428a6a8a42c1e9f9cf assets/meilanzhuju/models/item/stock_pot.json
 1bd4c555588144b9f6f2ce007cc32e3f8e4d4c42 assets/meilanzhuju/models/item/stripped_pteroceltis_log.json
 8eaf241f11eed3acdb4d06aff3b9807b01441055 assets/meilanzhuju/models/item/stripped_pteroceltis_wood.json
 bd3b31fa0aa3223d22224ad91608af9f335d45f5 assets/meilanzhuju/models/item/tung_leaves.json

@@ -1,28 +1,52 @@
 {
   "variants": {
-    "capped=false,contains_smoke=false,lit=false": {
+    "capped=false,contains_smoke=false,filled=false,lit=false": {
       "model": "meilanzhuju:block/oil_lamp_uncapped"
     },
-    "capped=false,contains_smoke=false,lit=true": {
+    "capped=false,contains_smoke=false,filled=false,lit=true": {
       "model": "meilanzhuju:block/oil_lamp_uncapped"
     },
-    "capped=false,contains_smoke=true,lit=false": {
-      "model": "meilanzhuju:block/oil_lamp_uncapped"
+    "capped=false,contains_smoke=false,filled=true,lit=false": {
+      "model": "meilanzhuju:block/oil_lamp_lit_uncapped"
     },
-    "capped=false,contains_smoke=true,lit=true": {
-      "model": "meilanzhuju:block/oil_lamp_uncapped"
+    "capped=false,contains_smoke=false,filled=true,lit=true": {
+      "model": "meilanzhuju:block/oil_lamp_lit_uncapped"
     },
-    "capped=true,contains_smoke=false,lit=false": {
-      "model": "meilanzhuju:block/oil_lamp_capped"
-    },
-    "capped=true,contains_smoke=false,lit=true": {
-      "model": "meilanzhuju:block/oil_lamp_capped"
-    },
-    "capped=true,contains_smoke=true,lit=false": {
+    "capped=false,contains_smoke=true,filled=false,lit=false": {
       "model": "meilanzhuju:block/oil_lamp_with_smoke"
     },
-    "capped=true,contains_smoke=true,lit=true": {
+    "capped=false,contains_smoke=true,filled=false,lit=true": {
       "model": "meilanzhuju:block/oil_lamp_with_smoke"
+    },
+    "capped=false,contains_smoke=true,filled=true,lit=false": {
+      "model": "meilanzhuju:block/oil_lamp_lit_uncapped"
+    },
+    "capped=false,contains_smoke=true,filled=true,lit=true": {
+      "model": "meilanzhuju:block/oil_lamp_lit_uncapped"
+    },
+    "capped=true,contains_smoke=false,filled=false,lit=false": {
+      "model": "meilanzhuju:block/oil_lamp_capped"
+    },
+    "capped=true,contains_smoke=false,filled=false,lit=true": {
+      "model": "meilanzhuju:block/oil_lamp_capped"
+    },
+    "capped=true,contains_smoke=false,filled=true,lit=false": {
+      "model": "meilanzhuju:block/oil_lamp_lit_capped"
+    },
+    "capped=true,contains_smoke=false,filled=true,lit=true": {
+      "model": "meilanzhuju:block/oil_lamp_lit_capped"
+    },
+    "capped=true,contains_smoke=true,filled=false,lit=false": {
+      "model": "meilanzhuju:block/oil_lamp_with_smoke"
+    },
+    "capped=true,contains_smoke=true,filled=false,lit=true": {
+      "model": "meilanzhuju:block/oil_lamp_with_smoke"
+    },
+    "capped=true,contains_smoke=true,filled=true,lit=false": {
+      "model": "meilanzhuju:block/oil_lamp_lit_capped"
+    },
+    "capped=true,contains_smoke=true,filled=true,lit=true": {
+      "model": "meilanzhuju:block/oil_lamp_lit_capped"
     }
   }
 }

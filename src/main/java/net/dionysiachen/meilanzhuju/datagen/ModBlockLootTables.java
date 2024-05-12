@@ -18,7 +18,6 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
@@ -41,13 +40,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.TUNG_SAPLING.get());
         this.dropSelf(ModBlocks.TUNG_LOG.get());
         this.dropSelf(ModBlocks.TUNG_PLANKS.get());
+
         this.dropSelf(ModBlocks.OIL_LAMP.get());
         this.dropSelf(ModBlocks.STOCK_POT.get());
+        this.dropSelf(ModBlocks.PRESS.get());
 
         this.add(ModBlocks.PTEROCELTIS_LEAVES.get(),
                 block -> createLeavesDrops(ModBlocks.PTEROCELTIS_LEAVES.get(), ModBlocks.PTEROCELTIS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(ModBlocks.TUNG_LEAVES.get(),
-                block -> createFruitLeavesDrops(ModBlocks.TUNG_LEAVES.get(), ModItems.TUNG_FRUIT.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+                block -> createFruitLeavesDrops(ModBlocks.TUNG_LEAVES.get(), ModItems.TUNG_FRUIT.get()));
 
         this.dropSelf(ModBlocks.OAK_TABLE.get());
 
@@ -65,13 +66,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 ModItems.MUNG_BEAN.get(), ModItems.MUNG_BEAN.get(), mungBeanCropLootBuilder));
     }
 
-    private LootTable.Builder createFruitLeavesDrops(Block pLeavesBlock, Item item, float[] pChances) {
+    private LootTable.Builder createFruitLeavesDrops(Block pLeavesBlock, Item item) {
         return createSilkTouchOrShearsDispatchTable(
                 pLeavesBlock,
                 this.applyExplosionCondition(
                         pLeavesBlock,
                         LootItem.lootTableItem(item)).when(BonusLevelTableCondition.bonusLevelFlatChance
-                        (Enchantments.BLOCK_FORTUNE, pChances)));
+                        (Enchantments.BLOCK_FORTUNE, BlockLootSubProvider.NORMAL_LEAVES_SAPLING_CHANCES)));
     }
 
     protected LootTable.Builder createPigmentOreDrops(Block pBlock, Item item) {
@@ -83,8 +84,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     }
 
     @Override
-    protected @NotNull Iterable<Block> getKnownBlocks() {
+    protected Iterable<Block> getKnownBlocks() {
         return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
-
     }
 }

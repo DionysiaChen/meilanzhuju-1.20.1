@@ -10,7 +10,10 @@ import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.recipes.*;
+import net.minecraft.data.recipes.CraftingRecipeBuilder;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeBuilder;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -18,8 +21,6 @@ import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
-
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -29,7 +30,7 @@ public class StockPotCookingRecipeBuilder extends CraftingRecipeBuilder implemen
     private final int count;
     private final List<Ingredient> ingredients = Lists.newArrayList();
     private final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
-    @Nullable
+
     private String group;
 
     public StockPotCookingRecipeBuilder(RecipeCategory pCategory, ItemLike pResult, int pCount) {
@@ -93,7 +94,7 @@ public class StockPotCookingRecipeBuilder extends CraftingRecipeBuilder implemen
         return this;
     }
 
-    public StockPotCookingRecipeBuilder group(@Nullable String pGroupName) {
+    public StockPotCookingRecipeBuilder group(String pGroupName) {
         this.group = pGroupName;
         return this;
     }
@@ -179,13 +180,10 @@ public class StockPotCookingRecipeBuilder extends CraftingRecipeBuilder implemen
         /**
          * Gets the JSON for the advancement that unlocks this recipe. Null if there is no advancement.
          */
-        @Nullable
         public JsonObject serializeAdvancement() {
             return this.advancement.serializeToJson();
         }
 
-
-        @Nullable
         public ResourceLocation getAdvancementId() {
             return this.advancementId;
         }

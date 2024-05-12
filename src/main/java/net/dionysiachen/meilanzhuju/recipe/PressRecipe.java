@@ -12,38 +12,30 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.util.RecipeMatcher;
-import java.util.List;
 
-public class StockPotRecipe implements Recipe<SimpleContainer> {
+public class PressRecipe implements Recipe<SimpleContainer> {
     private final NonNullList<Ingredient> inputItems;
     private final ItemStack output;
     private final ResourceLocation id;
 
-    public StockPotRecipe(ResourceLocation id, NonNullList<Ingredient> inputItems, ItemStack output) {
+    public PressRecipe(ResourceLocation id, NonNullList<Ingredient> inputItems, ItemStack output) {
         this.id = id;
         this.inputItems = inputItems;
         this.output = output;
+
     }
 
     @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
         if (pLevel.isClientSide()) {return false;}
-        List<ItemStack> inputs = new java.util.ArrayList<>();
-        int i = 0;
-        for (int j = 0; j < 9; ++j) {
-            ItemStack itemstack = pContainer.getItem(j);
-            if (!itemstack.isEmpty()) {
-                ++i;
-                inputs.add(itemstack);
-            }
-        }
-        return i == this.getIngredients().size() && RecipeMatcher.findMatches(inputs, this.getIngredients()) != null;
+        return  inputItems.get(0).test(pContainer.getItem(0));
     }
+
     @Override
     public ItemStack assemble(SimpleContainer pContainer, RegistryAccess pRegistryAccess) {
         return output.copy();
     }
+
     @Override
     public boolean canCraftInDimensions(int pWidth, int pHeight) {
         return true;
@@ -62,29 +54,30 @@ public class StockPotRecipe implements Recipe<SimpleContainer> {
     }
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return Serializer.INSTANCE;
+        return StockPotRecipe.Serializer.INSTANCE;
     }
     @Override
     public RecipeType<?> getType() {
         return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<StockPotRecipe> {
+
+    public static class Type implements RecipeType<PressRecipe> {
         private Type() {}
-        public static final Type INSTANCE = new Type();
-        public static final String ID = "stock_pot_cooking";
+        public static final PressRecipe.Type INSTANCE = new Type();
+        public static final String ID = "pressing";
     }
 
-    public static class Serializer implements RecipeSerializer<StockPotRecipe> {
-        public static final Serializer INSTANCE = new Serializer();
+    public static class Serializer implements RecipeSerializer<PressRecipe> {
+        public static final PressRecipe.Serializer INSTANCE = new PressRecipe.Serializer();
         public static final ResourceLocation ID =
-                new ResourceLocation(MEILANZHUJU.MOD_ID,"stock_pot_cooking");
+                new ResourceLocation(MEILANZHUJU.MOD_ID,"pressing");
 
         @Override
-        public StockPotRecipe fromJson(ResourceLocation id, JsonObject json) {
+        public PressRecipe fromJson(ResourceLocation id, JsonObject json) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));
             NonNullList<Ingredient> inputs = itemsFromJson(GsonHelper.getAsJsonArray(json, "ingredients"));
-            return new StockPotRecipe(id, inputs, output);
+            return new PressRecipe(id, inputs, output);
         }
 
         private static NonNullList<Ingredient> itemsFromJson(JsonArray pIngredientArray) {
@@ -100,17 +93,17 @@ public class StockPotRecipe implements Recipe<SimpleContainer> {
         }
 
         @Override
-        public StockPotRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
+        public PressRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
 
             inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
 
             ItemStack output = buf.readItem();
-            return new StockPotRecipe(id, inputs, output);
+            return new PressRecipe(id, inputs, output);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf buf, StockPotRecipe recipe) {
+        public void toNetwork(FriendlyByteBuf buf, PressRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
 
             for (Ingredient ing : recipe.getIngredients()) {

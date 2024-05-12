@@ -17,6 +17,9 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<StockPotMenu>> STOCK_POT_MENU =
             registryMenuType(StockPotMenu::new, "stock_pot_menu");
 
+    public static final RegistryObject<MenuType<PressMenu>> PRESS_MENU =
+            registryMenuType(PressMenu::new, "press_menu");
+
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registryMenuType(IContainerFactory<T> factory, String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }

@@ -33,13 +33,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.PTEROCELTIS_WOOD);
         blockItem(ModBlocks.STRIPPED_PTEROCELTIS_LOG);
         blockItem(ModBlocks.STRIPPED_PTEROCELTIS_WOOD);
-        blockWithItem(ModBlocks.PTEROCELTIS_PLANKS);
+        CubeBlockWithItem(ModBlocks.PTEROCELTIS_PLANKS);
         leavesBlock(ModBlocks.PTEROCELTIS_LEAVES);
 
         saplingBlock(ModBlocks.TUNG_SAPLING);
         blockItem(ModBlocks.TUNG_LOG);
         logBlock(((RotatedPillarBlock) ModBlocks.TUNG_LOG.get()));
-        blockWithItem(ModBlocks.TUNG_PLANKS);
+        CubeBlockWithItem(ModBlocks.TUNG_PLANKS);
         leavesBlock(ModBlocks.TUNG_LEAVES);
 
         logBlock(((RotatedPillarBlock) ModBlocks.PTEROCELTIS_LOG.get()));
@@ -49,10 +49,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_PTEROCELTIS_WOOD.get()), blockTexture(ModBlocks.STRIPPED_PTEROCELTIS_LOG.get()),
                 blockTexture(ModBlocks.STRIPPED_PTEROCELTIS_LOG.get()));
 
-        blockWithItem(ModBlocks.CINNABAR_ORE);
-        blockWithItem(ModBlocks.OAK_TABLE);
+        CubeBlockWithItem(ModBlocks.CINNABAR_ORE);
+        CubeBlockWithItem(ModBlocks.OAK_TABLE);
 
-        simpleBlock(ModBlocks.STOCK_POT.get(),
+        simpleBlockWithItem(ModBlocks.STOCK_POT.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/stock_pot")));
 
         makeCrop(((CustomCropBlock) ModBlocks.RICE_CROP.get()), "rice_stage", "rice_stage");
@@ -72,7 +72,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile( MEILANZHUJU.MOD_ID + ":block/" + Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get())).getPath()));
     }
 
-    private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
+    private void CubeBlockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(),cubeAll(blockRegistryObject.get()));
     }
 
@@ -97,16 +97,24 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void OilLamp() {
         getVariantBuilder(ModBlocks.OIL_LAMP.get()).forAllStates(state -> {
-            if (state.getValue(OilLampBlock.CAPPED)) {
-                if (state.getValue(OilLampBlock.CONTAINS_SMOKE)) {
-                    return new ConfiguredModel[] {new ConfiguredModel(
-                            new ModelFile.UncheckedModelFile(modLoc("block/oil_lamp_with_smoke")))};
-                } else {
-                    return new ConfiguredModel[] {new ConfiguredModel(
-                            new ModelFile.UncheckedModelFile(modLoc("block/oil_lamp_capped")))};
-                }
+            Boolean isCapped = state.getValue(OilLampBlock.CAPPED);
+            Boolean isFilled = state.getValue(OilLampBlock.FILLED);
+            Boolean containsSmoke = state.getValue(OilLampBlock.CONTAINS_SMOKE);
+
+            if (!isFilled && isCapped && !containsSmoke) {
+                return new ConfiguredModel[]{new ConfiguredModel(
+                        new ModelFile.UncheckedModelFile(modLoc("block/oil_lamp_capped")))};
+            }else if (isFilled && !isCapped) {
+                return new ConfiguredModel[]{new ConfiguredModel(
+                        new ModelFile.UncheckedModelFile(modLoc("block/oil_lamp_lit_uncapped")))};
+            } else if (isFilled && isCapped) {
+                return new ConfiguredModel[]{new ConfiguredModel(
+                        new ModelFile.UncheckedModelFile(modLoc("block/oil_lamp_lit_capped")))};
+            } else if (containsSmoke) {
+                return new ConfiguredModel[]{new ConfiguredModel(
+                        new ModelFile.UncheckedModelFile(modLoc("block/oil_lamp_with_smoke")))};
             } else {
-                return new ConfiguredModel[] {new ConfiguredModel(
+                return new ConfiguredModel[]{new ConfiguredModel(
                         new ModelFile.UncheckedModelFile(modLoc("block/oil_lamp_uncapped")))};
             }
         });

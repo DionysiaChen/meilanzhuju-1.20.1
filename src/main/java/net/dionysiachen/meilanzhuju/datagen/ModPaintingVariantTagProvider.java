@@ -7,12 +7,10 @@ import net.minecraft.data.tags.PaintingVariantTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.PaintingVariantTags;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import org.jetbrains.annotations.Nullable;
-
 import java.util.concurrent.CompletableFuture;
 
 public class ModPaintingVariantTagProvider extends PaintingVariantTagsProvider {
-    public ModPaintingVariantTagProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pProvider, @Nullable ExistingFileHelper existingFileHelper) {
+    public ModPaintingVariantTagProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pProvider, ExistingFileHelper existingFileHelper) {
         super(pOutput, pProvider, MEILANZHUJU.MOD_ID, existingFileHelper);
     }
 

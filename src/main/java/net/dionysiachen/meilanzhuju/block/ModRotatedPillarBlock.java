@@ -11,8 +11,6 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolAction;
 
-import javax.annotation.Nullable;
-
 public class ModRotatedPillarBlock extends RotatedPillarBlock {
 
     public ModRotatedPillarBlock(Properties pProperties) {
@@ -35,7 +33,7 @@ public class ModRotatedPillarBlock extends RotatedPillarBlock {
     }
 
     @Override
-    public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
+    public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
         if(context.getItemInHand().getItem() instanceof AxeItem) {
             if(state.is(ModBlocks.PTEROCELTIS_LOG.get())) {
                 popResource(context.getLevel(), context.getClickedPos(), new ItemStack(ModItems.PTEROCELTIS_BARK.get(),1));

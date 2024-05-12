@@ -40,12 +40,14 @@ public class ModCreativeModeTabs {
 
                         //Ink related
                         pOutput.accept(ModItems.INKSTICK.get());
-                        pOutput.accept(ModBlocks.OIL_LAMP.get());
-                        pOutput.accept(ModItems.OIL_LAMP_CAP.get());
-                        pOutput.accept(ModBlocks.STOCK_POT.get());
                         pOutput.accept(ModItems.TUNG_OIL.get());
                         pOutput.accept(ModItems.TUNG_OIL_SMOKE.get());
                         pOutput.accept(ModItems.GELATIN.get());
+
+                        pOutput.accept(ModBlocks.OIL_LAMP.get());
+                        pOutput.accept(ModItems.OIL_LAMP_CAP.get());
+                        pOutput.accept(ModBlocks.STOCK_POT.get());
+                        pOutput.accept(ModBlocks.PRESS.get());
 
                         //Paper related
                         pOutput.accept(ModItems.XUAN_PAPER.get());

@@ -1,0 +1,11 @@
+{
+  "type": "meilanzhuju:pressing",
+  "ingredients": [
+    {
+      "item": "meilanzhuju:tung_fruit"
+    }
+  ],
+  "result": {
+    "item": "meilanzhuju:tung_oil"
+  }
+}

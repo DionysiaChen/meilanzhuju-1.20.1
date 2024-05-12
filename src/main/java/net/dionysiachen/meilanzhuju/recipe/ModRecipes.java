@@ -12,7 +12,10 @@ public class ModRecipes {
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, MEILANZHUJU.MOD_ID);
 
     public static final RegistryObject<RecipeSerializer<StockPotRecipe>> STOCK_POT_SERIALIZER =
-            SERIALIZERS.register("stock_pot_cooking", () -> net.dionysiachen.meilanzhuju.recipe.StockPotRecipe.Serializer.INSTANCE);
+            SERIALIZERS.register("stock_pot_cooking", () -> StockPotRecipe.Serializer.INSTANCE);
+
+    public static final RegistryObject<RecipeSerializer<PressRecipe>> PRESS_SERIALIZER =
+            SERIALIZERS.register("pressing", () -> PressRecipe.Serializer.INSTANCE);
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

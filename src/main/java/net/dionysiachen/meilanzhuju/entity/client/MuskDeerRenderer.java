@@ -8,7 +8,6 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import org.jetbrains.annotations.NotNull;
 
 public class MuskDeerRenderer extends MobRenderer<MuskDeerEntity, MuskDeerModel<MuskDeerEntity>> {
     private static final ResourceLocation MUSK_DEER_LOCATION = new ResourceLocation(MEILANZHUJU.MOD_ID,"textures/entity/musk_deer.png");
@@ -18,13 +17,13 @@ public class MuskDeerRenderer extends MobRenderer<MuskDeerEntity, MuskDeerModel<
     }
 
     @Override
-    public @NotNull ResourceLocation getTextureLocation(@NotNull MuskDeerEntity pEntity) {
+    public ResourceLocation getTextureLocation(MuskDeerEntity pEntity) {
         return MUSK_DEER_LOCATION;
     }
 
     @Override
     public void render(MuskDeerEntity pEntity, float pEntityYaw, float pPartialTicks,
-                       @NotNull PoseStack pMatrixStack, @NotNull MultiBufferSource pBuffer, int pPackedLight) {
+                       PoseStack pMatrixStack, MultiBufferSource pBuffer, int pPackedLight) {
         if(pEntity.isBaby()) {
             pMatrixStack.scale(0.45f, 0.45f, 0.45f);
         }

@@ -1,4 +1,4 @@
-package net.dionysiachen.meilanzhuju.block.compat;
+package net.dionysiachen.meilanzhuju.compat;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -11,9 +11,11 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.dionysiachen.meilanzhuju.MEILANZHUJU;
 import net.dionysiachen.meilanzhuju.block.ModBlocks;
 import net.dionysiachen.meilanzhuju.recipe.StockPotRecipe;
+import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 
 public class StockPotCookingRecipeCategory implements IRecipeCategory<StockPotRecipe> {
     public static final ResourceLocation UID = new ResourceLocation(MEILANZHUJU.MOD_ID, "stock_pot_cooking");
@@ -53,7 +55,17 @@ public class StockPotCookingRecipeCategory implements IRecipeCategory<StockPotRe
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, StockPotRecipe recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 80, 11).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 80, 59).addItemStack(recipe.getResultItem(null));
+        NonNullList<Ingredient> recipeIngredients = recipe.getIngredients();
+        int borderSlotSize = 18;
+        for (int row = 0; row < 3; ++row) {
+            for (int column = 0; column < 3; ++column) {
+                int inputIndex = row * 3 + column;
+                if (inputIndex < recipeIngredients.size()) {
+                    builder.addSlot(RecipeIngredientRole.INPUT, 30 + column * borderSlotSize, 17 + row * borderSlotSize)
+                            .addIngredients(recipeIngredients.get(inputIndex));
+                }
+            }
+        }
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 123, 35).addItemStack(recipe.getResultItem(null));
     }
 }

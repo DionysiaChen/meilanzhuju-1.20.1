@@ -11,7 +11,6 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
 
 public class MuskDeerEntity extends Animal {
     public final AnimationState idleAnimationState = new AnimationState();
@@ -37,7 +36,6 @@ public class MuskDeerEntity extends Animal {
                 .add(Attributes.ATTACK_DAMAGE, 2f);
     }
 
-    @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
         return ModEntities.MUSK_DEER.get().create(pLevel);

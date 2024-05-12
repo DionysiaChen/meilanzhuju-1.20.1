@@ -1,6 +1,7 @@
 package net.dionysiachen.meilanzhuju.datagen;
 
 import net.dionysiachen.meilanzhuju.block.ModBlocks;
+import net.dionysiachen.meilanzhuju.datagen.custom.PressingRecipeBuilder;
 import net.dionysiachen.meilanzhuju.datagen.custom.StockPotCookingRecipeBuilder;
 import net.dionysiachen.meilanzhuju.item.ModItems;
 import net.minecraft.data.PackOutput;
@@ -9,8 +10,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-import org.jetbrains.annotations.NotNull;
-
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -20,7 +19,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     @Override
-    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> pWriter) {
+    protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.TUNG_SAPLING.get(), 1)
                 .requires(ModItems.TUNG_FRUIT.get())
@@ -47,7 +46,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.PTEROCELTIS_BARK.get()),has(ModItems.PTEROCELTIS_BARK.get()))
                 .save(pWriter);
 
-        planksFromLog(pWriter, ModBlocks.PTEROCELTIS_PLANKS.get().asItem(), ModBlocks.PTEROCELTIS_LOG.get().asItem(), 4);
+        planksFromLog(pWriter, ModBlocks.PTEROCELTIS_PLANKS.get().asItem(), ModBlocks.PTEROCELTIS_LOG.get().asItem());
         woodFromLogs(pWriter, ModBlocks.PTEROCELTIS_WOOD.get().asItem(), ModBlocks.PTEROCELTIS_LOG.get().asItem());
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.OAK_TABLE.get())
@@ -63,10 +62,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.LEATHER), has(Items.LEATHER))
                 .save(pWriter);
 
+
+        new PressingRecipeBuilder(ModItems.TUNG_FRUIT.get(), ModItems.TUNG_OIL.get(),1)
+                .unlockedBy("has_tung_fruit", has(ModItems.TUNG_FRUIT.get()))
+                .save(pWriter);
+
+
+
     }
 
-    protected static void planksFromLog(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pPlanks, ItemLike pLogs, int pResultCount) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, pPlanks, pResultCount).requires(pLogs).group("planks").unlockedBy("has_log", has(pLogs)).save(pFinishedRecipeConsumer);
+    protected static void planksFromLog(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pPlanks, ItemLike pLogs) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, pPlanks, 4).requires(pLogs).group("planks").unlockedBy("has_log", has(pLogs)).save(pFinishedRecipeConsumer);
     }
 
 }

@@ -1,7 +1,7 @@
 package net.dionysiachen.meilanzhuju.screen;
 
 import net.dionysiachen.meilanzhuju.block.ModBlocks;
-import net.dionysiachen.meilanzhuju.block.entity.StockPotBlockEntity;
+import net.dionysiachen.meilanzhuju.block.entity.PressBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -12,19 +12,19 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class StockPotMenu extends AbstractContainerMenu {
-    public final StockPotBlockEntity blockEntity;
+public class PressMenu extends AbstractContainerMenu {
+
+    public final PressBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public StockPotMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(10));
+    public PressMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
+        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
-
-    public StockPotMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(ModMenuTypes.STOCK_POT_MENU.get(), pContainerId);
-        checkContainerSize(inv, 10);
-        blockEntity = ((StockPotBlockEntity) entity);
+    public PressMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(ModMenuTypes.PRESS_MENU.get(), pContainerId);
+        checkContainerSize(inv, 2);
+        this.blockEntity = ((PressBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
 
@@ -32,20 +32,11 @@ public class StockPotMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
-            this.addSlot(new SlotItemHandler(iItemHandler, 0, 30, 17));
-            this.addSlot(new SlotItemHandler(iItemHandler, 1, 48, 17));
-            this.addSlot(new SlotItemHandler(iItemHandler, 2, 66, 17));
-            this.addSlot(new SlotItemHandler(iItemHandler, 3, 30, 35));
-            this.addSlot(new SlotItemHandler(iItemHandler, 4, 48, 35));
-            this.addSlot(new SlotItemHandler(iItemHandler, 5, 66, 35));
-            this.addSlot(new SlotItemHandler(iItemHandler, 6, 30, 53));
-            this.addSlot(new SlotItemHandler(iItemHandler, 7, 48, 53));
-            this.addSlot(new SlotItemHandler(iItemHandler, 8, 66, 53));
-            this.addSlot(new SlotItemHandler(iItemHandler, 9, 123, 35));
+            this.addSlot(new SlotItemHandler(iItemHandler, 0, 80, 11));
+            this.addSlot(new SlotItemHandler(iItemHandler, 1, 80, 60));
         });
 
         addDataSlots(data);
-
     }
 
     public boolean isCrafting() {
@@ -55,7 +46,7 @@ public class StockPotMenu extends AbstractContainerMenu {
     public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);
-        int progressArrowSize = 26;
+        int progressArrowSize = 30;
 
         return maxProgress != 0 && progress !=0 ? progress * progressArrowSize / maxProgress : 0;
     }
@@ -76,7 +67,7 @@ public class StockPotMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 10;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 2;  // must be the number of slots you have!
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);
@@ -113,7 +104,7 @@ public class StockPotMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, ModBlocks.STOCK_POT.get());
+                pPlayer, ModBlocks.PRESS.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {
@@ -129,5 +120,4 @@ public class StockPotMenu extends AbstractContainerMenu {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
     }
-
 }
