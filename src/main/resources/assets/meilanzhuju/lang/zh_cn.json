@@ -45,6 +45,9 @@
 
   "block.meilanzhuju.rice_seeds": "水稻种子",
 
-  "block.meilanzhuju.dried_bamboo": "竹子(已杀青)"
+  "block.meilanzhuju.dried_bamboo": "竹子(已杀青)",
+
+  "meilanzhuju.tooltip.liquid.amount.with.capacity": "%s / %s mB",
+  "meilanzhuju.tooltip.liquid.amount": "%s mB"
 
 }

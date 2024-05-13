@@ -66,6 +66,8 @@ public class StockPotCookingRecipeCategory implements IRecipeCategory<StockPotRe
                 }
             }
         }
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 123, 35).addItemStack(recipe.getResultItem(null));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 115, 35).addItemStack(recipe.getResultItem(null));
+        //TODO : fix this, now renders gelatin instead of water
+        builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 136, 59).addItemStack(recipe.getResultItem(null));
     }
 }

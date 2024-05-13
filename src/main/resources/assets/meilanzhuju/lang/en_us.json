@@ -42,11 +42,10 @@
   "item.meilanzhuju.portrait_sketch": "Sketch of Portrait",
   "item.meilanzhuju.mountain_sketch": "Sketch of Mountain",
 
-
-
   "block.meilanzhuju.rice_seeds": "Rice Seeds",
 
-  "block.meilanzhuju.dried_bamboo": "Dried Bamboo"
+  "block.meilanzhuju.dried_bamboo": "Dried Bamboo",
 
-
+  "meilanzhuju.tooltip.liquid.amount.with.capacity": "%s / %s mB",
+  "meilanzhuju.tooltip.liquid.amount": "%s mB"
 }

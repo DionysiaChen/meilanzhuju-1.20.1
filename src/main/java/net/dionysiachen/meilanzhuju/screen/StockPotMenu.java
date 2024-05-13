@@ -18,12 +18,12 @@ public class StockPotMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public StockPotMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(10));
+        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(11));
     }
 
     public StockPotMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.STOCK_POT_MENU.get(), pContainerId);
-        checkContainerSize(inv, 10);
+        checkContainerSize(inv, 11);
         blockEntity = ((StockPotBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
@@ -41,7 +41,8 @@ public class StockPotMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(iItemHandler, 6, 30, 53));
             this.addSlot(new SlotItemHandler(iItemHandler, 7, 48, 53));
             this.addSlot(new SlotItemHandler(iItemHandler, 8, 66, 53));
-            this.addSlot(new SlotItemHandler(iItemHandler, 9, 123, 35));
+            this.addSlot(new SlotItemHandler(iItemHandler, 9, 115, 35));
+            this.addSlot(new SlotItemHandler(iItemHandler, 10, 136, 59));
         });
 
         addDataSlots(data);
@@ -76,7 +77,7 @@ public class StockPotMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 10;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 11;  // must be the number of slots you have!
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);
