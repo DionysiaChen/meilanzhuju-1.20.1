@@ -36,7 +36,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RICE_SEEDS);
         simpleItem(ModItems.STRAW);
 
-        simpleItem(ModItems.FOUR_TREASURES_OF_THE_STUDY);
         simpleItem(ModItems.INKSTONE);
 
         simpleItem(ModItems.CINNABAR);

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "meilanzhuju:oak_table"
+        "recipe": "meilanzhuju:reading_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "meilanzhuju:oak_table"
+      "meilanzhuju:reading_table"
     ]
   },
   "sends_telemetry_event": false

@@ -53,9 +53,13 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.XUAN_PAPER.get());
                         pOutput.accept(ModItems.STRAW.get());
 
+                        //Inkstone related
                         pOutput.accept(ModItems.INKSTONE.get());
+                        pOutput.accept(ModItems.RAW_JADE.get());
+                        pOutput.accept(ModBlocks.SAND_WITH_RAW_JADE.get());
 
-                        pOutput.accept(ModItems.FOUR_TREASURES_OF_THE_STUDY.get());
+                        //Scrolls and final production
+                        pOutput.accept(ModItems.READING_TABLE.get());
 
                         //Seeds
                         pOutput.accept(ModItems.RICE_SEEDS.get());
@@ -63,8 +67,6 @@ public class ModCreativeModeTabs {
 
                         pOutput.accept(ModBlocks.CINNABAR_ORE.get());
                         pOutput.accept(ModItems.CINNABAR.get());
-
-                        pOutput.accept(ModBlocks.OAK_TABLE.get());
 
                         pOutput.accept(ModItems.BIRD_SKETCH.get());
                         pOutput.accept(ModItems.PORTRAIT_SKETCH.get());

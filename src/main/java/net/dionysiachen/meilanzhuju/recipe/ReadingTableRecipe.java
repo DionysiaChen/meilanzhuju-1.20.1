@@ -13,14 +13,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.util.RecipeMatcher;
+
 import java.util.List;
 
-public class StockPotRecipe implements Recipe<SimpleContainer> {
+public class ReadingTableRecipe implements Recipe<SimpleContainer> {
     private final NonNullList<Ingredient> inputItems;
     private final ItemStack output;
     private final ResourceLocation id;
 
-    public StockPotRecipe(ResourceLocation id, NonNullList<Ingredient> inputItems, ItemStack output) {
+    public ReadingTableRecipe(ResourceLocation id, NonNullList<Ingredient> inputItems, ItemStack output) {
         this.id = id;
         this.inputItems = inputItems;
         this.output = output;
@@ -69,22 +70,22 @@ public class StockPotRecipe implements Recipe<SimpleContainer> {
         return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<StockPotRecipe> {
+    public static class Type implements RecipeType<ReadingTableRecipe> {
         private Type() {}
         public static final Type INSTANCE = new Type();
-        public static final String ID = "stock_pot_cooking";
+        public static final String ID = "reading_table_restoration";
     }
 
-    public static class Serializer implements RecipeSerializer<StockPotRecipe> {
+    public static class Serializer implements RecipeSerializer<ReadingTableRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID =
-                new ResourceLocation(MEILANZHUJU.MOD_ID,"stock_pot_cooking");
+                new ResourceLocation(MEILANZHUJU.MOD_ID,"reading_table_restoration");
 
         @Override
-        public StockPotRecipe fromJson(ResourceLocation id, JsonObject json) {
+        public ReadingTableRecipe fromJson(ResourceLocation id, JsonObject json) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));
             NonNullList<Ingredient> inputs = itemsFromJson(GsonHelper.getAsJsonArray(json, "ingredients"));
-            return new StockPotRecipe(id, inputs, output);
+            return new ReadingTableRecipe(id, inputs, output);
         }
 
         private static NonNullList<Ingredient> itemsFromJson(JsonArray pIngredientArray) {
@@ -100,17 +101,17 @@ public class StockPotRecipe implements Recipe<SimpleContainer> {
         }
 
         @Override
-        public StockPotRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
+        public ReadingTableRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
 
             inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
 
             ItemStack output = buf.readItem();
-            return new StockPotRecipe(id, inputs, output);
+            return new ReadingTableRecipe(id, inputs, output);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf buf, StockPotRecipe recipe) {
+        public void toNetwork(FriendlyByteBuf buf, ReadingTableRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
 
             for (Ingredient ing : recipe.getIngredients()) {

@@ -82,7 +82,7 @@ public class OilLampBlock extends Block {
             }
             pLevel.addParticle(ParticleTypes.SMALL_FLAME, POSITION.x, POSITION.y, POSITION.z, 0.0D, 0.0D, 0.0D);
             if (!pState.getValue(CAPPED)) {
-                if (f < 0.3F) {
+                if (f < 0.5F) {
                     pLevel.addParticle(ParticleTypes.SMOKE, POSITION.x, POSITION.y, POSITION.z, 0.0D, 0.0D, 0.0D);
                 }
             }
@@ -104,6 +104,7 @@ public class OilLampBlock extends Block {
         boolean usingTungOil = pPlayer.getMainHandItem().getItem() == ModItems.TUNG_OIL.get();
         boolean usingFlintAndSteel = pPlayer.getMainHandItem().getItem() == Items.FLINT_AND_STEEL;
         boolean usingCap = pPlayer.getMainHandItem().getItem() == ModItems.OIL_LAMP_CAP.get();
+        boolean usingBrush = pPlayer.getMainHandItem().getItem() == Items.BRUSH;
 
         if (!pLevel.isClientSide && pHand == InteractionHand.MAIN_HAND) {
             if (usingTungOil) {
@@ -112,6 +113,8 @@ public class OilLampBlock extends Block {
                 tryLit(pState, pLevel, pPos, pPlayer, pHand);
             } else if (usingCap) {
                 tryCapping(pState, pLevel, pPos, pPlayer, pHand);
+            }else if (usingBrush) {
+                tryRemoveSmoke(pState, pLevel, pPos, pPlayer);
             }
 
             if (pPlayer.isCrouching()) {
@@ -120,6 +123,26 @@ public class OilLampBlock extends Block {
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
+    }
+
+    private void tryRemoveSmoke(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer) {
+        ItemStack oil_lamp_cap = new ItemStack(ModItems.OIL_LAMP_CAP.get());
+        ItemStack smoke = new ItemStack(ModItems.TUNG_OIL_SMOKE.get());
+        BlockState newState = pState;
+
+        if (pLevel.getBlockState(pPos).getValue(CONTAINS_SMOKE)) {
+            newState = newState.setValue(CONTAINS_SMOKE, false);
+            if (!pPlayer.getInventory().add(smoke)) {
+                pPlayer.drop(smoke, false);
+            }
+        }
+
+        if (!pPlayer.isCreative() && !pPlayer.getInventory().add(oil_lamp_cap)) {
+            pPlayer.drop(oil_lamp_cap, false);
+        }
+
+        newState = newState.setValue(CAPPED, false);
+        pLevel.setBlock(pPos, newState, 3);
     }
 
     private void tryFilling(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand) {
@@ -148,14 +171,10 @@ public class OilLampBlock extends Block {
 
     private void tryCapping(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand) {
         boolean isCapped = pState.getValue(CAPPED);
-        boolean isLit = pState.getValue(LIT);
         if (!isCapped) {
             pLevel.setBlock(pPos, pState.setValue(CAPPED, true),3);
             if (!pPlayer.isCreative()) {
                 pPlayer.getItemInHand(pHand).shrink(1);}
-            //if (isLit) {
-                //pLevel.scheduleTick(pPos, this, BURNTIME, TickPriority.LOW);
-            //}
         }
     }
 
@@ -168,11 +187,9 @@ public class OilLampBlock extends Block {
         BlockState newState = pState;
 
         if (isCapped) {
-            if (pState.getValue(CONTAINS_SMOKE)) {
-                newState = newState.setValue(CONTAINS_SMOKE, false);
-                if (!pPlayer.getInventory().add(smoke)) {
-                    pPlayer.drop(smoke, false);
-                }
+            newState = newState.setValue(CONTAINS_SMOKE, false);
+            if (!pPlayer.getInventory().add(smoke)) {
+                pPlayer.drop(smoke, false);
             }
 
             if (!pPlayer.isCreative() && !pPlayer.getInventory().add(oil_lamp_cap)) {

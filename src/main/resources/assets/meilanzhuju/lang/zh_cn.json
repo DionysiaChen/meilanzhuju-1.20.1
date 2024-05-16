@@ -25,9 +25,6 @@
   "block.meilanzhuju.tung_oil_smoke": "桐油烟",
   "block.meilanzhuju.gelatin": "明胶",
 
-
-  "item.meilanzhuju.four_treasures_of_the_study": "文房四宝",
-
   "item.meilanzhuju.xuan_paper": "宣纸",
   "item.meilanzhuju.straw": "Straw",
 
@@ -35,7 +32,7 @@
 
   "item.meilanzhuju.cinnabar": "朱砂",
 
-  "block.meilanzhuju.oak_table": "橡木桌子",
+  "block.meilanzhuju.reading_table": "书案",
 
   "block.meilanzhuju.cinnabar_ore": "朱砂矿石",
 

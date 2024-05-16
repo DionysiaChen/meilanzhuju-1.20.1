@@ -12,6 +12,7 @@ import net.dionysiachen.meilanzhuju.recipe.ModRecipes;
 import net.dionysiachen.meilanzhuju.screen.ModMenuTypes;
 import net.dionysiachen.meilanzhuju.screen.PressScreen;
 import net.dionysiachen.meilanzhuju.screen.StockPotScreen;
+import net.dionysiachen.meilanzhuju.screen.ReadingTableScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
@@ -76,6 +77,7 @@ public class MEILANZHUJU {
             event.enqueueWork(() -> {
                 MenuScreens.register(ModMenuTypes.STOCK_POT_MENU.get(), StockPotScreen::new);
                 MenuScreens.register(ModMenuTypes.PRESS_MENU.get(), PressScreen::new);
+                MenuScreens.register(ModMenuTypes.READING_TABLE_MENU.get(), ReadingTableScreen::new);
 
                 EntityRenderers.register(ModEntities.MUSK_DEER.get(), MuskDeerRenderer::new);
 

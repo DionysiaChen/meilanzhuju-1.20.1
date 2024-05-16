@@ -22,6 +22,11 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(PressBlockEntity::new,
                             ModBlocks.PRESS.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<ReadingTableBlockEntity>> READING_TABLE_BE =
+            BLOCK_ENTITIES.register("reading_table_be", () ->
+                    BlockEntityType.Builder.of(ReadingTableBlockEntity::new,
+                            ModBlocks.READING_TABLE.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

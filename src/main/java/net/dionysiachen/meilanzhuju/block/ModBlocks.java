@@ -1,5 +1,6 @@
 package net.dionysiachen.meilanzhuju.block;
 
+import ca.weblite.objc.Proxy;
 import net.dionysiachen.meilanzhuju.MEILANZHUJU;
 import net.dionysiachen.meilanzhuju.item.ModItems;
 import net.dionysiachen.meilanzhuju.worldgen.PteroceltisTreeGrower;
@@ -7,11 +8,9 @@ import net.dionysiachen.meilanzhuju.worldgen.TungTreeGrower;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -43,9 +42,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> TUNG_LEAVES = registerBlock("tung_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
 
-    public static final RegistryObject<Block> OAK_TABLE = registerBlock("oak_table",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
-
     public static final RegistryObject<Block> CINNABAR_ORE = registerBlock("cinnabar_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
                     .strength(2f), UniformInt.of(1,3)));
@@ -59,6 +55,15 @@ public class ModBlocks {
     public static final RegistryObject<Block> STOCK_POT = registerBlock("stock_pot",
             () -> new StockPotBlock(BlockBehaviour.Properties.of().strength(0.5f)));
 
+    //Scrolls and final production
+    public static final RegistryObject<Block> READING_TABLE = BLOCKS.register("reading_table",
+            () -> new ReadingTableBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.WOOD)
+                    .strength(0.2F)
+                    .noOcclusion()
+                    .ignitedByLava()
+                    .pushReaction(PushReaction.DESTROY)));
+
     //Crops and saplings
     public static final RegistryObject<Block> RICE_CROP = BLOCKS.register("rice_crop",
             () -> new CustomCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT), ModItems.RICE_SEEDS));
@@ -69,6 +74,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> TUNG_SAPLING = registerBlock("tung_sapling",
             () -> new ModSaplingBlock(new TungTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> SAND_WITH_RAW_JADE =registerBlock("sand_with_raw_jade",
+            () -> new SandBlock(14406560, BlockBehaviour.Properties.copy(Blocks.SAND)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

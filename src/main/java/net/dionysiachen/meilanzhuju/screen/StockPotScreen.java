@@ -29,7 +29,7 @@ public class StockPotScreen extends AbstractContainerScreen<StockPotMenu> {
     }
 
     private void assignFluidRenderer() {
-        fluidRenderer = new FluidTankRenderer(64000, true, 10, 65);
+        fluidRenderer = new FluidTankRenderer(4000, true, 10, 65);
     }
 
     @Override

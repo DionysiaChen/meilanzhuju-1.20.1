@@ -1,7 +1,7 @@
-// 1.20.1	2023-12-15T16:07:04.3830106	Tags for minecraft:block mod id meilanzhuju
+// 1.20.1	2024-05-14T16:06:57.2758386	Tags for minecraft:block mod id meilanzhuju
 c1fdda5a2d4de40e678333cdcd4e489975749380 data/meilanzhuju/tags/blocks/meilanzhuju_ores.json
 39a9f37e03a5979619d85d5c3d4752e04d42e417 data/minecraft/tags/blocks/logs_that_burn.json
-ef9a933ebb8f77c8240df02a299bfe160dac2be1 data/minecraft/tags/blocks/mineable/axe.json
+0c3bcf8269a2f94dae4782460f420de31d5d8b9a data/minecraft/tags/blocks/mineable/axe.json
 c1fdda5a2d4de40e678333cdcd4e489975749380 data/minecraft/tags/blocks/mineable/pickaxe.json
 c1fdda5a2d4de40e678333cdcd4e489975749380 data/minecraft/tags/blocks/needs_iron_tool.json
 d2bc2f8876b31e500dbb1d1843c591961d983c57 data/minecraft/tags/blocks/planks.json

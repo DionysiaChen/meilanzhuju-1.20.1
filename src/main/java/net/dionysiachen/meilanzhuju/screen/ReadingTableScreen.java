@@ -9,10 +9,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class PressScreen extends AbstractContainerScreen<PressMenu> {
+public class ReadingTableScreen extends AbstractContainerScreen<ReadingTableMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(MEILANZHUJU.MOD_ID, "textures/gui/press_gui.png");
-    public PressScreen(PressMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+            new ResourceLocation(MEILANZHUJU.MOD_ID, "textures/gui/reading_table_gui.png");
+    public ReadingTableScreen(ReadingTableMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
 

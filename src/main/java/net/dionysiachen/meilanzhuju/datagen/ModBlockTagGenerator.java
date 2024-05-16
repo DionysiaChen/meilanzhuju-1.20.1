@@ -24,7 +24,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.CINNABAR_ORE.get());
 
         this.tag(BlockTags.MINEABLE_WITH_AXE)
-                .add(ModBlocks.OAK_TABLE.get());
+                .add(ModBlocks.READING_TABLE.get());
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.CINNABAR_ORE.get());

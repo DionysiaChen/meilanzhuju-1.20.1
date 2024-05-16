@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "meilanzhuju:block/oak_table"
+    "all": "meilanzhuju:block/sand_with_raw_jade"
   }
 }

@@ -1,6 +1,7 @@
 package net.dionysiachen.meilanzhuju.screen;
 
 import net.dionysiachen.meilanzhuju.block.ModBlocks;
+import net.dionysiachen.meilanzhuju.block.entity.ReadingTableBlockEntity;
 import net.dionysiachen.meilanzhuju.block.entity.StockPotBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -12,19 +13,19 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class StockPotMenu extends AbstractContainerMenu {
-    public final StockPotBlockEntity blockEntity;
+public class ReadingTableMenu extends AbstractContainerMenu {
+
+    public final ReadingTableBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
-
-    public StockPotMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(11));
+    public ReadingTableMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
+        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
-    public StockPotMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(ModMenuTypes.STOCK_POT_MENU.get(), pContainerId);
-        checkContainerSize(inv, 11);
-        blockEntity = ((StockPotBlockEntity) entity);
+    public ReadingTableMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(ModMenuTypes.READING_TABLE_MENU.get(), pContainerId);
+        checkContainerSize(inv, 6);
+        blockEntity = ((ReadingTableBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
 
@@ -38,11 +39,6 @@ public class StockPotMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(iItemHandler, 3, 30, 35));
             this.addSlot(new SlotItemHandler(iItemHandler, 4, 48, 35));
             this.addSlot(new SlotItemHandler(iItemHandler, 5, 66, 35));
-            this.addSlot(new SlotItemHandler(iItemHandler, 6, 30, 53));
-            this.addSlot(new SlotItemHandler(iItemHandler, 7, 48, 53));
-            this.addSlot(new SlotItemHandler(iItemHandler, 8, 66, 53));
-            this.addSlot(new SlotItemHandler(iItemHandler, 9, 115, 35));
-            this.addSlot(new SlotItemHandler(iItemHandler, 10, 137, 59));
         });
 
         addDataSlots(data);
@@ -94,12 +90,13 @@ public class StockPotMenu extends AbstractContainerMenu {
         }
         sourceSlot.onTake(playerIn, sourceStack);
         return copyOfSourceStack;
+
     }
 
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, ModBlocks.STOCK_POT.get());
+                pPlayer, ModBlocks.READING_TABLE.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {
@@ -115,5 +112,4 @@ public class StockPotMenu extends AbstractContainerMenu {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
     }
-
 }

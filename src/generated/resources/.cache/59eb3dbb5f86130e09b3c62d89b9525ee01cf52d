@@ -1,7 +1,6 @@
-// 1.20.1	2024-05-11T03:09:52.9001176	Loot Tables
+// 1.20.1	2024-05-16T22:10:11.9324722	Loot Tables
 24a8658c9f4c76626b56b5964b71b22ae9dee6d5 data/meilanzhuju/loot_tables/blocks/cinnabar_ore.json
 d6fbc4cce12a8729d56b6e263890ee87ee681e8f data/meilanzhuju/loot_tables/blocks/mung_bean_crop.json
-f5289c4032cd78cee7d7e7b01f1ed687a106680e data/meilanzhuju/loot_tables/blocks/oak_table.json
 a35dd0db9029cf8b6e4154050f3b7236b986bfe8 data/meilanzhuju/loot_tables/blocks/oil_lamp.json
 3cab2eda03535ea95526ed3937f547caf1d5c5da data/meilanzhuju/loot_tables/blocks/press.json
 3a831575febc513b6f26a3f8c0de6f1bca82ffe1 data/meilanzhuju/loot_tables/blocks/pteroceltis_leaves.json
@@ -9,7 +8,9 @@ a35dd0db9029cf8b6e4154050f3b7236b986bfe8 data/meilanzhuju/loot_tables/blocks/oil
 6ab6fd531f58f4581627a4c22166f939f5874b26 data/meilanzhuju/loot_tables/blocks/pteroceltis_planks.json
 89501df1afb74a5e7d9acd8a75d175e253bb9d69 data/meilanzhuju/loot_tables/blocks/pteroceltis_sapling.json
 1e7c3c564b9d4a9454e1ac8149d162a245ce85af data/meilanzhuju/loot_tables/blocks/pteroceltis_wood.json
+d7bc5aba9a668050f55951e7ef5bc40566342185 data/meilanzhuju/loot_tables/blocks/reading_table.json
 e9e543ec086d38752fc52f7ae4e200e13198d111 data/meilanzhuju/loot_tables/blocks/rice_crop.json
+8ca453cc8fe1aee4f61ae0d040396396b74025e6 data/meilanzhuju/loot_tables/blocks/sand_with_raw_jade.json
 a09f83d05b46517d0ea83de716ee0647d1c1cf8e data/meilanzhuju/loot_tables/blocks/stock_pot.json
 7ddaafa36db02c84fb173aac142363393a18108b data/meilanzhuju/loot_tables/blocks/stripped_pteroceltis_log.json
 119f7e2080b0fc96e6506b29ca4f5e7c89bb664b data/meilanzhuju/loot_tables/blocks/stripped_pteroceltis_wood.json

@@ -17,6 +17,9 @@ public class ModRecipes {
     public static final RegistryObject<RecipeSerializer<PressRecipe>> PRESS_SERIALIZER =
             SERIALIZERS.register("pressing", () -> PressRecipe.Serializer.INSTANCE);
 
+    public static final RegistryObject<RecipeSerializer<ReadingTableRecipe>> READING_TABLE_SERIALIZER =
+            SERIALIZERS.register("reading_table_restoration", () -> ReadingTableRecipe.Serializer.INSTANCE);
+
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
     }

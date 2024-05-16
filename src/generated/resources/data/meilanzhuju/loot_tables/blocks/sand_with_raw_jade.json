@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "meilanzhuju:raw_jade"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:sand"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "meilanzhuju:blocks/sand_with_raw_jade"
+}

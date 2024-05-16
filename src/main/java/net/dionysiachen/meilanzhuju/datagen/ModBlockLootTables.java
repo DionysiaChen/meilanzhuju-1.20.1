@@ -2,13 +2,19 @@ package net.dionysiachen.meilanzhuju.datagen;
 
 import net.dionysiachen.meilanzhuju.block.CustomCropBlock;
 import net.dionysiachen.meilanzhuju.block.ModBlocks;
+import net.dionysiachen.meilanzhuju.block.ReadingTableBlock;
 import net.dionysiachen.meilanzhuju.item.ModItems;
+import net.minecraft.advancements.critereon.LootTableTrigger;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
@@ -44,16 +50,17 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.OIL_LAMP.get());
         this.dropSelf(ModBlocks.STOCK_POT.get());
         this.dropSelf(ModBlocks.PRESS.get());
+        this.add(ModBlocks.READING_TABLE.get(), (block) -> this.createSinglePropConditionTable(block, ReadingTableBlock.PART, ReadingTableBlock.TablePart.LEFT));
 
         this.add(ModBlocks.PTEROCELTIS_LEAVES.get(),
                 block -> createLeavesDrops(ModBlocks.PTEROCELTIS_LEAVES.get(), ModBlocks.PTEROCELTIS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(ModBlocks.TUNG_LEAVES.get(),
                 block -> createFruitLeavesDrops(ModBlocks.TUNG_LEAVES.get(), ModItems.TUNG_FRUIT.get()));
 
-        this.dropSelf(ModBlocks.OAK_TABLE.get());
-
         this.add(ModBlocks.CINNABAR_ORE.get(),
                 block -> createPigmentOreDrops(ModBlocks.CINNABAR_ORE.get(), ModItems.CINNABAR.get()));
+        this.add(ModBlocks.SAND_WITH_RAW_JADE.get(),
+                block -> LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(ModItems.RAW_JADE.get())).add(LootItem.lootTableItem(Blocks.SAND))));
 
         LootItemCondition.Builder riceCropLootBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.RICE_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CustomCropBlock.AGE, 7));

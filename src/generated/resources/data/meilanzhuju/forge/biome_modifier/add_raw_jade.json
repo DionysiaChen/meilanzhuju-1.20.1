@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_river",
+  "features": "meilanzhuju:raw_jade_placed",
+  "step": "underground_ores"
+}

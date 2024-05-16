@@ -16,6 +16,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_TREE_PTEROCELTIS = registerKey("add_tree_pteroceltis");
     private static final ResourceKey<BiomeModifier> ADD_TREE_TUNG = registerKey("add_tree_tung");
+    private static final ResourceKey<BiomeModifier> ADD_RAW_JADE = registerKey("add_raw_jade");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -30,6 +31,11 @@ public class ModBiomeModifiers {
                 biomes.getOrThrow(BiomeTags.IS_FOREST),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.TUNG_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_RAW_JADE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_RIVER),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.RAW_JADE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {

@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "meilanzhuju:block/stock_pot",
+      "y": 90
+    },
+    "facing=north": {
       "model": "meilanzhuju:block/stock_pot"
+    },
+    "facing=south": {
+      "model": "meilanzhuju:block/stock_pot",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "meilanzhuju:block/stock_pot",
+      "y": 270
     }
   }
 }

@@ -1,15 +1,18 @@
 package net.dionysiachen.meilanzhuju.datagen;
 
+import com.electronwill.nightconfig.core.UnmodifiableConfig;
 import net.dionysiachen.meilanzhuju.MEILANZHUJU;
 import net.dionysiachen.meilanzhuju.block.ModBlocks;
 import net.dionysiachen.meilanzhuju.block.CustomCropBlock;
 import net.dionysiachen.meilanzhuju.block.OilLampBlock;
+import net.dionysiachen.meilanzhuju.block.ReadingTableBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -50,15 +53,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 blockTexture(ModBlocks.STRIPPED_PTEROCELTIS_LOG.get()));
 
         CubeBlockWithItem(ModBlocks.CINNABAR_ORE);
-        CubeBlockWithItem(ModBlocks.OAK_TABLE);
+        CubeBlockWithItem(ModBlocks.SAND_WITH_RAW_JADE);
 
-        simpleBlockWithItem(ModBlocks.STOCK_POT.get(),
+        horizontalBlock(ModBlocks.STOCK_POT.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/stock_pot")));
+
+
 
         makeCrop(((CustomCropBlock) ModBlocks.RICE_CROP.get()), "rice_stage", "rice_stage");
         makeCrop(((CustomCropBlock) ModBlocks.MUNG_BEAN_CROP.get()), "mung_bean_stage", "mung_bean_stage");
 
-        OilLamp();
+        oilLamp();
+        readingTable();
     }
 
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
@@ -95,7 +101,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().cross(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get())).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 
-    private void OilLamp() {
+    private void oilLamp() {
         getVariantBuilder(ModBlocks.OIL_LAMP.get()).forAllStates(state -> {
             Boolean isCapped = state.getValue(OilLampBlock.CAPPED);
             Boolean isFilled = state.getValue(OilLampBlock.FILLED);
@@ -119,5 +125,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
             }
         });
         simpleBlockItem(ModBlocks.OIL_LAMP.get(), new ModelFile.UncheckedModelFile(modLoc("block/oil_lamp_capped")));
+    }
+
+    private void readingTable() {
+        getVariantBuilder(ModBlocks.READING_TABLE.get()).forAllStates(state ->
+                ConfiguredModel.builder()
+                        .modelFile(new ModelFile.UncheckedModelFile(modLoc("block/reading_table")))
+                        .rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
+                        .build()
+        );
+        simpleBlockItem(ModBlocks.READING_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/reading_table")));
     }
 }

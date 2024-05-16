@@ -21,23 +21,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.TUNG_SAPLING.get(), 1)
-                .requires(ModItems.TUNG_FRUIT.get())
-                .unlockedBy(getHasName(ModItems.TUNG_FRUIT.get()), has(ModItems.TUNG_FRUIT.get()))
-                .save(pWriter);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.INK_BRUSH.get(), 1)
                 .requires(ModItems.GOAT_WOOL.get())
                 .requires(ModItems.DRIED_BAMBOO.get())
                 .unlockedBy(getHasName(ModItems.GOAT_WOOL.get()), has(ModItems.GOAT_WOOL.get()))
-                .save(pWriter);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.FOUR_TREASURES_OF_THE_STUDY.get(), 1)
-                .requires(ModItems.INK_BRUSH.get())
-                .requires(ModItems.INKSTICK.get())
-                .requires(ModItems.XUAN_PAPER.get())
-                .requires(ModItems.INKSTONE.get())
-                .unlockedBy(getHasName(ModItems.INK_BRUSH.get()),has(ModItems.INK_BRUSH.get()))
                 .save(pWriter);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.XUAN_PAPER.get(), 1)
@@ -46,10 +34,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.PTEROCELTIS_BARK.get()),has(ModItems.PTEROCELTIS_BARK.get()))
                 .save(pWriter);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.INKSTONE.get(), 1)
+                .requires(ModItems.RAW_JADE.get())
+                .unlockedBy(getHasName(ModItems.RAW_JADE.get()),has(ModItems.RAW_JADE.get()))
+                .save(pWriter);
+
         planksFromLog(pWriter, ModBlocks.PTEROCELTIS_PLANKS.get().asItem(), ModBlocks.PTEROCELTIS_LOG.get().asItem());
         woodFromLogs(pWriter, ModBlocks.PTEROCELTIS_WOOD.get().asItem(), ModBlocks.PTEROCELTIS_LOG.get().asItem());
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.OAK_TABLE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.READING_TABLE.get())
                 .pattern("SSS")
                 .pattern("S S")
                 .pattern("S S")
@@ -62,12 +55,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.LEATHER), has(Items.LEATHER))
                 .save(pWriter);
 
-
         new PressingRecipeBuilder(ModItems.TUNG_FRUIT.get(), ModItems.TUNG_OIL.get(),1)
                 .unlockedBy("has_tung_fruit", has(ModItems.TUNG_FRUIT.get()))
                 .save(pWriter);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.TUNG_SAPLING.get(), 1)
+                .requires(ModItems.TUNG_FRUIT.get())
+                .unlockedBy(getHasName(ModItems.TUNG_FRUIT.get()), has(ModItems.TUNG_FRUIT.get()))
+                .save(pWriter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STOCK_POT.get())
+                .pattern("   ")
+                .pattern("S S")
+                .pattern("SSS")
+                .define('S', Items.COPPER_INGOT)
+                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.PRESS.get())
+                .pattern(" H ")
+                .pattern("SPS")
+                .pattern("SSS")
+                .define('S', Items.IRON_INGOT)
+                .define('P', Blocks.PISTON)
+                .define('H', Blocks.HOPPER)
+                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
+                .save(pWriter);
 
     }
 

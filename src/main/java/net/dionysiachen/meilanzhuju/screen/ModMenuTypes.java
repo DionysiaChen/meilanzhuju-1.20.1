@@ -20,6 +20,9 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<PressMenu>> PRESS_MENU =
             registryMenuType(PressMenu::new, "press_menu");
 
+    public static final RegistryObject<MenuType<ReadingTableMenu>> READING_TABLE_MENU =
+            registryMenuType(ReadingTableMenu::new, "reading_table_menu");
+
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registryMenuType(IContainerFactory<T> factory, String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }

@@ -1,8 +1,11 @@
 package net.dionysiachen.meilanzhuju.item;
 
+import ca.weblite.objc.Proxy;
 import net.dionysiachen.meilanzhuju.MEILANZHUJU;
 import net.dionysiachen.meilanzhuju.block.ModBlocks;
 import net.dionysiachen.meilanzhuju.entity.ModEntities;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.HangingEntityItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -15,15 +18,21 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MEILANZHUJU.MOD_ID);
 
+    //Scrolls and final production
+    public static final RegistryObject<Item> BROKEN_SCROLL_ZITHER = ITEMS.register("broken_scroll_zither",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> READING_TABLE = ITEMS.register("reading_table",
+            () -> new BlockItem(ModBlocks.READING_TABLE.get(), new Item.Properties()));
+
     //Brush related items
     public static final RegistryObject<Item> INK_BRUSH = ITEMS.register("ink_brush",
-            () -> new Item(new Item.Properties()));
+            () -> new FourTreasuresOfTheStudy(new Item.Properties()));
     public static final RegistryObject<Item> GOAT_WOOL = ITEMS.register("goat_wool",
             () -> new Item(new Item.Properties()));
 
     //Ink related items
     public static final RegistryObject<Item> INKSTICK = ITEMS.register("inkstick",
-            () -> new Item(new Item.Properties()));
+            () -> new FourTreasuresOfTheStudy(new Item.Properties()));
     public static final RegistryObject<Item> TUNG_OIL = ITEMS.register("tung_oil",
             () -> new FuelItem(new Item.Properties(), 4000));
 
@@ -64,13 +73,13 @@ public class ModItems {
     public static final RegistryObject<Item> TEST_CROP_TOOL = ITEMS.register("test_crop_tool",
             () -> new TestCropTool(new Item.Properties()));
 
-    public static final RegistryObject<Item> FOUR_TREASURES_OF_THE_STUDY = ITEMS.register("four_treasures_of_the_study",
-            () -> new FourTreasuresOfTheStudy(new Item.Properties()));
-
     public static final RegistryObject<Item> LACQUER = ITEMS.register("dried_lacquer",
             () -> new Item(new Item.Properties()));
 
+    //Ores
     public static final RegistryObject<Item> CINNABAR = ITEMS.register("cinnabar",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_JADE = ITEMS.register("raw_jade",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> BIRD_SKETCH = ITEMS.register("bird_sketch",

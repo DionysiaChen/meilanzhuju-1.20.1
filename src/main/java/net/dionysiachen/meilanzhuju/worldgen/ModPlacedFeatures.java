@@ -6,10 +6,13 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
@@ -19,6 +22,7 @@ import java.util.List;
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> PTEROCELTIS_PLACED_KEY = registerKey("pteroceltis_placed");
     public static final ResourceKey<PlacedFeature> TUNG_PLACED_KEY = registerKey("tung_placed");
+    public static final ResourceKey<PlacedFeature> RAW_JADE_PLACED_KEY = registerKey("raw_jade_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -28,8 +32,11 @@ public class ModPlacedFeatures {
                         ModBlocks.PTEROCELTIS_SAPLING.get()));
 
         register(context, TUNG_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TUNG_KEY),
-                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(10),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(1),
                         ModBlocks.TUNG_SAPLING.get()));
+
+        register(context, RAW_JADE_PLACED_KEY,  configuredFeatures.getOrThrow(ModConfiguredFeatures.RAW_JADE_KEY),
+                ModOrePlacement.rareOrePlacement(1, HeightRangePlacement.uniform(VerticalAnchor.absolute(55), VerticalAnchor.absolute(64))));
 
     }
 
