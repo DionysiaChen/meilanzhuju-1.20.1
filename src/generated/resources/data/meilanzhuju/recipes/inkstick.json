@@ -1,0 +1,156 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "meilanzhuju:ink_model"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:tung_oil_smoke"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    },
+    {
+      "item": "meilanzhuju:gelatin"
+    }
+  ],
+  "result": {
+    "item": "meilanzhuju:inkstick"
+  }
+}

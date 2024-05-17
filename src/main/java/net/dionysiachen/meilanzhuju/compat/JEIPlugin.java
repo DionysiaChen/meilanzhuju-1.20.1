@@ -7,8 +7,10 @@ import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.dionysiachen.meilanzhuju.MEILANZHUJU;
 import net.dionysiachen.meilanzhuju.recipe.PressRecipe;
+import net.dionysiachen.meilanzhuju.recipe.ReadingTableRecipe;
 import net.dionysiachen.meilanzhuju.recipe.StockPotRecipe;
 import net.dionysiachen.meilanzhuju.screen.PressScreen;
+import net.dionysiachen.meilanzhuju.screen.ReadingTableScreen;
 import net.dionysiachen.meilanzhuju.screen.StockPotScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -29,17 +31,23 @@ public class JEIPlugin implements IModPlugin {
                 registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new PressingRecipeCategory(
                 registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new ReadingTableRecipeCategory(
+                registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         assert Minecraft.getInstance().level != null;
         RecipeManager recipeManager = Minecraft.getInstance().level.getRecipeManager();
+
         List<StockPotRecipe> stockPotRecipes = recipeManager.getAllRecipesFor(StockPotRecipe.Type.INSTANCE);
         registration.addRecipes(StockPotCookingRecipeCategory.STOCK_POT_COOKING_TYPE, stockPotRecipes);
 
         List<PressRecipe> pressRecipes = recipeManager.getAllRecipesFor(PressRecipe.Type.INSTANCE);
         registration.addRecipes(PressingRecipeCategory.PRESSING_TYPE, pressRecipes);
+
+        List<ReadingTableRecipe> readingTableRecipes = recipeManager.getAllRecipesFor(ReadingTableRecipe.Type.INSTANCE);
+        registration.addRecipes(ReadingTableRecipeCategory.READING_TABLE_RESTORATION_TYPE, readingTableRecipes);
     }
 
     @Override
@@ -48,5 +56,7 @@ public class JEIPlugin implements IModPlugin {
                 StockPotCookingRecipeCategory.STOCK_POT_COOKING_TYPE);
         registration.addRecipeClickArea(PressScreen.class, 55, 34, 20, 18,
                 PressingRecipeCategory.PRESSING_TYPE);
+        registration.addRecipeClickArea(ReadingTableScreen.class, 5, 34, 20, 18,
+                ReadingTableRecipeCategory.READING_TABLE_RESTORATION_TYPE);
     }
 }

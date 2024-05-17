@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_planks": {
+    "has_broken_scroll_zither": {
       "conditions": {
         "items": [
           {
-            "tag": "minecraft:planks"
+            "items": [
+              "meilanzhuju:broken_scroll_zither"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "meilanzhuju:reading_table"
+        "recipe": "meilanzhuju:hanging_scroll_zither"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_planks",
+      "has_broken_scroll_zither",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "meilanzhuju:reading_table"
+      "meilanzhuju:hanging_scroll_zither"
     ]
   },
   "sends_telemetry_event": false

@@ -1,0 +1,11 @@
+{
+  "type": "meilanzhuju:reading_table_restoration",
+  "ingredients": [
+    {
+      "item": "meilanzhuju:broken_scroll_zither"
+    }
+  ],
+  "result": {
+    "item": "meilanzhuju:hanging_scroll_zither"
+  }
+}

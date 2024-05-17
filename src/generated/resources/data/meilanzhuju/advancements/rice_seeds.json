@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "has_rice_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "meilanzhuju:rice_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "meilanzhuju:textures/item/rice_seeds.png",
+    "description": {
+      "text": "Feed yourself before you become an artist!"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "meilanzhuju:rice_seeds"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Sorry we don't eat bread"
+    }
+  },
+  "requirements": [
+    [
+      "has_rice_seed"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

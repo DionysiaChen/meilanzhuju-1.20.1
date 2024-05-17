@@ -15,6 +15,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public class StockPotCookingRecipeCategory implements IRecipeCategory<StockPotRecipe> {
@@ -68,6 +69,7 @@ public class StockPotCookingRecipeCategory implements IRecipeCategory<StockPotRe
         }
         builder.addSlot(RecipeIngredientRole.OUTPUT, 115, 35).addItemStack(recipe.getResultItem(null));
         //TODO : fix this, now renders gelatin instead of water
-        builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 136, 59).addItemStack(recipe.getResultItem(null));
+        builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 136, 59).addItemStack(Items.WATER_BUCKET.getDefaultInstance());
+        builder.setShapeless();
     }
 }

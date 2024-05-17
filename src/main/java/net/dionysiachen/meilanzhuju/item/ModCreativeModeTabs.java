@@ -40,6 +40,7 @@ public class ModCreativeModeTabs {
 
                         //Ink related
                         pOutput.accept(ModItems.INKSTICK.get());
+                        pOutput.accept(ModItems.INK_MODEL.get());
                         pOutput.accept(ModItems.TUNG_OIL.get());
                         pOutput.accept(ModItems.TUNG_OIL_SMOKE.get());
                         pOutput.accept(ModItems.GELATIN.get());
@@ -60,6 +61,8 @@ public class ModCreativeModeTabs {
 
                         //Scrolls and final production
                         pOutput.accept(ModItems.READING_TABLE.get());
+                        pOutput.accept(ModItems.BROKEN_SCROLL_ZITHER.get());
+                        pOutput.accept(ModItems.HANGING_SCROLL_ZITHER.get());
 
                         //Seeds
                         pOutput.accept(ModItems.RICE_SEEDS.get());

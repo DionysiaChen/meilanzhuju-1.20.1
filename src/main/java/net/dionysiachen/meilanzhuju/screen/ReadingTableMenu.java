@@ -33,12 +33,12 @@ public class ReadingTableMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
-            this.addSlot(new SlotItemHandler(iItemHandler, 0, 30, 17));
-            this.addSlot(new SlotItemHandler(iItemHandler, 1, 48, 17));
-            this.addSlot(new SlotItemHandler(iItemHandler, 2, 66, 17));
-            this.addSlot(new SlotItemHandler(iItemHandler, 3, 30, 35));
-            this.addSlot(new SlotItemHandler(iItemHandler, 4, 48, 35));
-            this.addSlot(new SlotItemHandler(iItemHandler, 5, 66, 35));
+            this.addSlot(new SlotItemHandler(iItemHandler, 0, 29, 25));
+            this.addSlot(new SlotItemHandler(iItemHandler, 1, 47, 25));
+            this.addSlot(new SlotItemHandler(iItemHandler, 2, 29, 43));
+            this.addSlot(new SlotItemHandler(iItemHandler, 3, 47, 43));
+            this.addSlot(new SlotItemHandler(iItemHandler, 4, 66, 35));
+            this.addSlot(new SlotItemHandler(iItemHandler, 5, 115, 35));
         });
 
         addDataSlots(data);

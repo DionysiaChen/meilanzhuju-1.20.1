@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "meilanzhuju:reading_table"
+        "recipe": "meilanzhuju:ink_model"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "meilanzhuju:reading_table"
+      "meilanzhuju:ink_model"
     ]
   },
   "sends_telemetry_event": false

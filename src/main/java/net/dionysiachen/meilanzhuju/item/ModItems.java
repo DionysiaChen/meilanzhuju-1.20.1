@@ -1,11 +1,10 @@
 package net.dionysiachen.meilanzhuju.item;
 
-import ca.weblite.objc.Proxy;
 import net.dionysiachen.meilanzhuju.MEILANZHUJU;
 import net.dionysiachen.meilanzhuju.block.ModBlocks;
 import net.dionysiachen.meilanzhuju.entity.ModEntities;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.HangingEntityItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -21,6 +20,8 @@ public class ModItems {
     //Scrolls and final production
     public static final RegistryObject<Item> BROKEN_SCROLL_ZITHER = ITEMS.register("broken_scroll_zither",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> HANGING_SCROLL_ZITHER = ITEMS.register("hanging_scroll_zither",
+            () -> new HangingScrollItem(new Item.Properties()));
     public static final RegistryObject<Item> READING_TABLE = ITEMS.register("reading_table",
             () -> new BlockItem(ModBlocks.READING_TABLE.get(), new Item.Properties()));
 
@@ -33,6 +34,8 @@ public class ModItems {
     //Ink related items
     public static final RegistryObject<Item> INKSTICK = ITEMS.register("inkstick",
             () -> new FourTreasuresOfTheStudy(new Item.Properties()));
+    public static final RegistryObject<Item> INK_MODEL = ITEMS.register("ink_model",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TUNG_OIL = ITEMS.register("tung_oil",
             () -> new FuelItem(new Item.Properties(), 4000));
 
@@ -94,6 +97,7 @@ public class ModItems {
     public static final RegistryObject<Item> MUSK_DEER_SPAWN_EGG = ITEMS.register("musk_deer_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.MUSK_DEER, 0x7e9680, 0xc5d1c5,
                     new Item.Properties().stacksTo(16)));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

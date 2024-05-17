@@ -7,12 +7,12 @@
     }
   },
   "pattern": [
-    "SSS",
+    " S ",
     "S S",
-    "S S"
+    " S "
   ],
   "result": {
-    "item": "meilanzhuju:reading_table"
+    "item": "meilanzhuju:ink_model"
   },
   "show_notification": true
 }

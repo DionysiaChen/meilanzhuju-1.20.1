@@ -39,53 +39,32 @@ public class StockPotCookingRecipeBuilder extends CraftingRecipeBuilder implemen
         this.count = pCount;
     }
 
-    /**
-     * Creates a new builder for a shapeless recipe.
-     */
     public static StockPotCookingRecipeBuilder shapeless(RecipeCategory pCategory, ItemLike pResult, int pCount) {
         return new StockPotCookingRecipeBuilder(pCategory, pResult, pCount);
     }
-
-    /**
-     * Adds an ingredient that can be any item in the given tag.
-     */
     public StockPotCookingRecipeBuilder requires(TagKey<Item> pTag) {
         return this.requires(Ingredient.of(pTag));
     }
 
-    /**
-     * Adds an ingredient of the given item.
-     */
     public StockPotCookingRecipeBuilder requires(ItemLike pItem) {
         return this.requires(pItem, 1);
     }
 
-    /**
-     * Adds the given ingredient multiple times.
-     */
     public StockPotCookingRecipeBuilder requires(ItemLike pItem, int pQuantity) {
         for(int i = 0; i < pQuantity; ++i) {
             this.requires(Ingredient.of(pItem));
         }
-
         return this;
     }
 
-    /**
-     * Adds an ingredient.
-     */
     public StockPotCookingRecipeBuilder requires(Ingredient pIngredient) {
         return this.requires(pIngredient, 1);
     }
 
-    /**
-     * Adds an ingredient multiple times.
-     */
     public StockPotCookingRecipeBuilder requires(Ingredient pIngredient, int pQuantity) {
         for(int i = 0; i < pQuantity; ++i) {
             this.ingredients.add(pIngredient);
         }
-
         return this;
     }
 
