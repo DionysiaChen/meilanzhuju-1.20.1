@@ -2,7 +2,6 @@ package net.dionysiachen.meilanzhuju.screen;
 
 import net.dionysiachen.meilanzhuju.block.ModBlocks;
 import net.dionysiachen.meilanzhuju.block.entity.ReadingTableBlockEntity;
-import net.dionysiachen.meilanzhuju.block.entity.StockPotBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;

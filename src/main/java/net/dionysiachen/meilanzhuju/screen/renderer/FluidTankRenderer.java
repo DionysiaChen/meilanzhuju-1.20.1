@@ -121,14 +121,12 @@ public class FluidTankRenderer {
         final long yTileCount = scaledAmount / TEXTURE_SIZE;
         final long yRemainder = scaledAmount - (yTileCount * TEXTURE_SIZE);
 
-        final int yStart = tiledHeight;
-
         for (int xTile = 0; xTile <= xTileCount; xTile++) {
             for (int yTile = 0; yTile <= yTileCount; yTile++) {
                 int width = (xTile == xTileCount) ? xRemainder : TEXTURE_SIZE;
                 long height = (yTile == yTileCount) ? yRemainder : TEXTURE_SIZE;
                 int x = (xTile * TEXTURE_SIZE);
-                int y = yStart - ((yTile + 1) * TEXTURE_SIZE);
+                int y = tiledHeight - ((yTile + 1) * TEXTURE_SIZE);
                 if (width > 0 && height > 0) {
                     long maskTop = TEXTURE_SIZE - height;
                     int maskRight = TEXTURE_SIZE - width;

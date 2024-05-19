@@ -1,11 +1,9 @@
 package net.dionysiachen.meilanzhuju.datagen;
 
-import com.electronwill.nightconfig.core.UnmodifiableConfig;
 import net.dionysiachen.meilanzhuju.MEILANZHUJU;
-import net.dionysiachen.meilanzhuju.block.ModBlocks;
 import net.dionysiachen.meilanzhuju.block.CustomCropBlock;
+import net.dionysiachen.meilanzhuju.block.ModBlocks;
 import net.dionysiachen.meilanzhuju.block.OilLampBlock;
-import net.dionysiachen.meilanzhuju.block.ReadingTableBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -57,6 +55,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         horizontalBlock(ModBlocks.STOCK_POT.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/stock_pot")));
+        simpleBlock(ModBlocks.PRESS.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/press")));
 
 
 
@@ -124,7 +124,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         new ModelFile.UncheckedModelFile(modLoc("block/oil_lamp_uncapped")))};
             }
         });
-        simpleBlockItem(ModBlocks.OIL_LAMP.get(), new ModelFile.UncheckedModelFile(modLoc("block/oil_lamp_capped")));
     }
 
     private void readingTable() {
@@ -134,6 +133,5 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         .rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
                         .build()
         );
-        simpleBlockItem(ModBlocks.READING_TABLE.get(), new ModelFile.UncheckedModelFile(modLoc("block/reading_table")));
     }
 }

@@ -40,15 +40,15 @@ public class MEILANZHUJU {
         modEventBus.addListener(this::addCreative);
 
         net.dionysiachen.meilanzhuju.item.ModCreativeModeTabs modCreativeModeTabs = null;
+        ModEntities.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
-
-        ModEntities.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
 

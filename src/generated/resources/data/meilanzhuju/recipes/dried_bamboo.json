@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "meilanzhuju:dried_bamboo"
+    }
+  ],
+  "result": {
+    "item": "meilanzhuju:dried_bamboo"
+  }
+}

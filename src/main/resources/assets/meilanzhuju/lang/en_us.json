@@ -7,7 +7,7 @@
   "block.meilanzhuju.stripped_pteroceltis_wood": "Stripped Pteroceltis Wood",
   "block.meilanzhuju.pteroceltis_planks": "Pteroceltis Planks",
   "block.meilanzhuju.pteroceltis_leaves": "Pteroceltis Leaves",
-  "block.meilanzhuju.pteroceltis_bark": "Pteroceltis Bark",
+  "item.meilanzhuju.pteroceltis_bark": "Pteroceltis Bark",
   "block.meilanzhuju.pteroceltis_sapling": "Pteroceltis Sapling",
   "item.meilanzhuju.tung_fruit": "Tung Fruit",
   "block.meilanzhuju.tung_sapling": "Tung Sapling",
@@ -39,6 +39,7 @@
   "item.meilanzhuju.bird_sketch": "Sketch of Bird",
   "item.meilanzhuju.portrait_sketch": "Sketch of Portrait",
   "item.meilanzhuju.mountain_sketch": "Sketch of Mountain",
+  "item.meilanzhuju.broken_scroll_zither": "Broken Scroll: Listening to a Zither",
 
   "block.meilanzhuju.rice_seeds": "Rice Seeds",
 

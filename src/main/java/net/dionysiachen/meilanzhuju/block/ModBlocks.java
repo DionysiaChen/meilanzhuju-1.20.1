@@ -1,6 +1,5 @@
 package net.dionysiachen.meilanzhuju.block;
 
-import ca.weblite.objc.Proxy;
 import net.dionysiachen.meilanzhuju.MEILANZHUJU;
 import net.dionysiachen.meilanzhuju.item.ModItems;
 import net.dionysiachen.meilanzhuju.worldgen.PteroceltisTreeGrower;

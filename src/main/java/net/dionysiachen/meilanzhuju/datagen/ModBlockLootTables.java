@@ -4,7 +4,6 @@ import net.dionysiachen.meilanzhuju.block.CustomCropBlock;
 import net.dionysiachen.meilanzhuju.block.ModBlocks;
 import net.dionysiachen.meilanzhuju.block.ReadingTableBlock;
 import net.dionysiachen.meilanzhuju.item.ModItems;
-import net.minecraft.advancements.critereon.LootTableTrigger;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -12,8 +11,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -24,7 +21,6 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
-
 import java.util.Set;
 
 public class ModBlockLootTables extends BlockLootSubProvider {

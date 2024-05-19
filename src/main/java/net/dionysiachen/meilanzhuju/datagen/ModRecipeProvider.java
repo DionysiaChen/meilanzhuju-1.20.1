@@ -7,9 +7,7 @@ import net.dionysiachen.meilanzhuju.datagen.custom.StockPotCookingRecipeBuilder;
 import net.dionysiachen.meilanzhuju.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
@@ -30,6 +28,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.GOAT_WOOL.get())
                 .requires(ModItems.DRIED_BAMBOO.get())
                 .unlockedBy(getHasName(ModItems.GOAT_WOOL.get()), has(ModItems.GOAT_WOOL.get()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.DRIED_BAMBOO.get(), 1)
+                .requires(ModItems.DRIED_BAMBOO.get())
+                .unlockedBy(getHasName(ModItems.DRIED_BAMBOO.get()), has(ModItems.DRIED_BAMBOO.get()))
                 .save(pWriter);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.XUAN_PAPER.get(), 1)
@@ -64,12 +67,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.PRESS.get())
-                .pattern(" H ")
                 .pattern("SPS")
+                .pattern(" B ")
                 .pattern("SSS")
                 .define('S', Items.IRON_INGOT)
                 .define('P', Blocks.PISTON)
-                .define('H', Blocks.HOPPER)
+                .define('B', Items.BUCKET)
                 .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
                 .save(pWriter);
 
@@ -87,6 +90,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" S ")
                 .define('S', ItemTags.PLANKS)
                 .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.OIL_LAMP.get())
+                .pattern("   ")
+                .pattern("S S")
+                .pattern(" S ")
+                .define('S', Items.CLAY_BALL)
+                .unlockedBy("has_clay_ball", has(Items.CLAY_BALL))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OIL_LAMP_CAP.get())
+                .pattern(" S ")
+                .pattern("S S")
+                .pattern("   ")
+                .define('S', Items.CLAY_BALL)
+                .unlockedBy("has_clay_ball", has(Items.CLAY_BALL))
                 .save(pWriter);
 
         planksFromLog(pWriter, ModBlocks.PTEROCELTIS_PLANKS.get().asItem(), ModBlocks.PTEROCELTIS_LOG.get().asItem());

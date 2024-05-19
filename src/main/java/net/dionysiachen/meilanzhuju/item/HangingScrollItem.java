@@ -1,26 +1,33 @@
 package net.dionysiachen.meilanzhuju.item;
 
+import net.dionysiachen.meilanzhuju.MEILANZHUJU;
 import net.dionysiachen.meilanzhuju.ModPaintings;
-import net.dionysiachen.meilanzhuju.entity.ModEntities;
+import net.dionysiachen.meilanzhuju.datagen.ModPaintingVariantTagProvider;
+import net.dionysiachen.meilanzhuju.entity.HangingScrollEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.decoration.HangingEntity;
 import net.minecraft.world.entity.decoration.Painting;
+import net.minecraft.world.entity.decoration.PaintingVariant;
+import net.minecraft.world.entity.decoration.PaintingVariants;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.HangingEntityItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
 
 import java.util.Optional;
 
 public class HangingScrollItem extends HangingEntityItem {
 
-    public HangingScrollItem(Properties pProperties) {
-        super(EntityType.PAINTING, pProperties);
+    public HangingScrollItem(EntityType<? extends HangingEntity> pType, Properties pProperties) {
+        super(pType, pProperties);
     }
 
     @Override
@@ -30,18 +37,19 @@ public class HangingScrollItem extends HangingEntityItem {
         BlockPos blockpos1 = blockpos.relative(direction);
         Player player = pContext.getPlayer();
         ItemStack itemStack = new ItemStack(pContext.getItemInHand().getItem());
-        CompoundTag pTag = itemStack.getOrCreateTagElement("music");
         if (player != null && !this.mayPlace(player, direction, itemStack, blockpos1)) {
             return InteractionResult.FAIL;
-        } else {
-            Level level = pContext.getLevel();
-            HangingEntity hangingentity;
-            Optional<Painting> optional = Painting.create(level, blockpos1, direction);
-            if (optional.isEmpty()) {
-                return InteractionResult.CONSUME;
+        }
+        Level level = pContext.getLevel();
+        Holder<PaintingVariant> scroll = BuiltInRegistries.PAINTING_VARIANT.getHolder(ModPaintings.MUSIC);
+        Painting hangingScroll = new Painting(level, blockpos1, direction, scroll);
+        ;
+        if (hangingScroll.survives()) {
+            if (!level.isClientSide) {
+                hangingScroll.playPlacementSound();
+                level.gameEvent(player, GameEvent.ENTITY_PLACE, hangingScroll.position());
+                level.addFreshEntity(hangingScroll);
             }
-
-            hangingentity = optional.get();
         }
         return InteractionResult.CONSUME;
     }

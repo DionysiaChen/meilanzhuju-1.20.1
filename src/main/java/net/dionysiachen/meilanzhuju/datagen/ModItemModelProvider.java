@@ -19,6 +19,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        simpleItem(ModItems.BROKEN_SCROLL_ZITHER);
         saplingItem(ModBlocks.PTEROCELTIS_SAPLING);
         simpleItem(ModItems.TUNG_FRUIT);
         saplingItem(ModBlocks.TUNG_SAPLING);
@@ -30,6 +31,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.OIL_LAMP_CAP);
         simpleItem(ModItems.TUNG_OIL_SMOKE);
         simpleItem(ModItems.GELATIN);
+        simpleItem(ModItems.INK_MODEL);
 
         simpleItem(ModItems.XUAN_PAPER);
         simpleItem(ModItems.PTEROCELTIS_BARK);

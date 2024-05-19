@@ -17,11 +17,11 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MEILANZHUJU.MOD_ID);
 
-    //Scrolls and final production
+    //Scrolls and restoration
     public static final RegistryObject<Item> BROKEN_SCROLL_ZITHER = ITEMS.register("broken_scroll_zither",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> HANGING_SCROLL_ZITHER = ITEMS.register("hanging_scroll_zither",
-            () -> new HangingScrollItem(new Item.Properties()));
+            () -> new HangingScrollItem(EntityType.PAINTING, new  Item.Properties()));
     public static final RegistryObject<Item> READING_TABLE = ITEMS.register("reading_table",
             () -> new BlockItem(ModBlocks.READING_TABLE.get(), new Item.Properties()));
 
@@ -95,7 +95,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> MUSK_DEER_SPAWN_EGG = ITEMS.register("musk_deer_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.MUSK_DEER, 0x7e9680, 0xc5d1c5,
+            () -> new ForgeSpawnEggItem(ModEntities.MUSK_DEER, 0x664c33, 0xb7aea4,
                     new Item.Properties().stacksTo(16)));
 
 

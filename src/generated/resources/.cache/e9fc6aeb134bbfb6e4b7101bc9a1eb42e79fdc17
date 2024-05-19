@@ -1,3 +1,4 @@
-// 1.20.1	2024-05-07T00:39:40.6969313	Global Loot Modifiers : meilanzhuju
-839954d9871c08d730ad8bb9a5604d603c8d1752 data/forge/loot_modifiers/global_loot_modifiers.json
+// 1.20.1	2024-05-18T03:11:33.2395197	Global Loot Modifiers : meilanzhuju
+885e445a624da87c7219f222555c1b0b17c5b392 data/forge/loot_modifiers/global_loot_modifiers.json
+e45bfa9c5ec51b0a31a0ca318517038997c52613 data/meilanzhuju/loot_modifiers/goat_wool.json
 b0cd2a406294327a934c6e6fbdb1c4db5c9bbf77 data/meilanzhuju/loot_modifiers/rice_seeds_from_grass.json

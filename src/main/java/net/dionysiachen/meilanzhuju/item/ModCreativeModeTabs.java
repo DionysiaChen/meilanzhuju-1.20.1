@@ -66,19 +66,19 @@ public class ModCreativeModeTabs {
 
                         //Seeds
                         pOutput.accept(ModItems.RICE_SEEDS.get());
-                        pOutput.accept(ModItems.MUNG_BEAN.get());
+                        //pOutput.accept(ModItems.MUNG_BEAN.get());
 
-                        pOutput.accept(ModBlocks.CINNABAR_ORE.get());
-                        pOutput.accept(ModItems.CINNABAR.get());
+                        //pOutput.accept(ModBlocks.CINNABAR_ORE.get());
+                        //pOutput.accept(ModItems.CINNABAR.get());
 
-                        pOutput.accept(ModItems.BIRD_SKETCH.get());
-                        pOutput.accept(ModItems.PORTRAIT_SKETCH.get());
-                        pOutput.accept(ModItems.MOUNTAIN_SKETCH.get());
+                        //pOutput.accept(ModItems.BIRD_SKETCH.get());
+                        //pOutput.accept(ModItems.PORTRAIT_SKETCH.get());
+                        //pOutput.accept(ModItems.MOUNTAIN_SKETCH.get());
 
                         pOutput.accept(ModItems.DRIED_BAMBOO.get());
 
                         //Test items
-                        pOutput.accept(ModItems.TEST_CROP_TOOL.get());
+                        //pOutput.accept(ModItems.TEST_CROP_TOOL.get());
                         pOutput.accept(ModItems.MUSK_DEER_SPAWN_EGG.get());
 
                     })

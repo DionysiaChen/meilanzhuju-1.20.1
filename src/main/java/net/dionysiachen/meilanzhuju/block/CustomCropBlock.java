@@ -12,7 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class CustomCropBlock extends CropBlock {
     public static final int MAX_AGE = 7;
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 7);
-    public RegistryObject<Item> TYPE;
+    public final RegistryObject<Item> TYPE;
 
     public CustomCropBlock(Properties pProperties, RegistryObject<Item> item) {
 
