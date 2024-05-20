@@ -2,48 +2,57 @@
   "creativetab.meilanzhuju_tab": "Meilanzhuju",
 
   "block.meilanzhuju.pteroceltis_log": "Pteroceltis Log",
-  "block.meilanzhuju.pteroceltis_wood": "Pteroceltis Wood",
   "block.meilanzhuju.stripped_pteroceltis_log": "Stripped Pteroceltis Log",
+  "block.meilanzhuju.tung_log": "Tung Log",
+  "block.meilanzhuju.pteroceltis_wood": "Pteroceltis Wood",
   "block.meilanzhuju.stripped_pteroceltis_wood": "Stripped Pteroceltis Wood",
   "block.meilanzhuju.pteroceltis_planks": "Pteroceltis Planks",
-  "block.meilanzhuju.pteroceltis_leaves": "Pteroceltis Leaves",
-  "item.meilanzhuju.pteroceltis_bark": "Pteroceltis Bark",
-  "block.meilanzhuju.pteroceltis_sapling": "Pteroceltis Sapling",
-  "item.meilanzhuju.tung_fruit": "Tung Fruit",
-  "block.meilanzhuju.tung_sapling": "Tung Sapling",
-  "item.meilanzhuju.tung_oil": "Tung Oil",
-  "block.meilanzhuju.tung_log": "Tung Log",
   "block.meilanzhuju.tung_planks": "Tung Planks",
+
+  "block.meilanzhuju.pteroceltis_sapling": "Pteroceltis Sapling",
+  "block.meilanzhuju.tung_sapling": "Tung Sapling",
+  "block.meilanzhuju.pteroceltis_leaves": "Pteroceltis Leaves",
   "block.meilanzhuju.tung_leaves": "Tung Leaves",
+  "item.meilanzhuju.tung_fruit": "Tung Fruit",
+  "item.meilanzhuju.pteroceltis_bark": "Pteroceltis Bark",
 
   "item.meilanzhuju.ink_brush": "Ink Brush",
-  "item.meilanzhuju.goat_wool": "Goat Wool",
-
   "item.meilanzhuju.inkstick": "Inkstick",
-  "block.meilanzhuju.oil_lamp": "Oil Lamp",
-  "item.meilanzhuju.oil_lamp_cap": "Oil Lamp Cap",
+  "item.meilanzhuju.xuan_paper": "Xuan Paper",
+  "item.meilanzhuju.inkstone": "Inkstone",
+
+  "item.meilanzhuju.goat_wool": "Goat Wool",
+  "item.meilanzhuju.tung_oil": "Tung Oil",
   "block.meilanzhuju.tung_oil_smoke": "Tung Oil Smoke",
   "block.meilanzhuju.gelatin": "Gelatin",
-
-  "item.meilanzhuju.xuan_paper": "Xuan Paper",
   "item.meilanzhuju.straw": "Straw",
+  "block.meilanzhuju.dried_bamboo": "Dried Bamboo",
 
-  "item.meilanzhuju.inkstone": "Inkstone",
-  "item.meilanzhuju.cinnabar": "Cinnabar",
+  "block.meilanzhuju.oil_lamp": "Oil Lamp",
+  "item.meilanzhuju.oil_lamp_cap": "Oil Lamp Cap",
+  "block.meilanzhuju.stock_pot": "Stock Pot",
+  "block.meilanzhuju.press": "Press",
+  "item.meilanzhuju.ink_model": "Ink Model",
 
+  "item.meilanzhuju.raw_jade": "Raw Jade",
+  "block.meilanzhuju.sand_with_raw_jade": "Sand with Raw Jade",
+
+  "item.meilanzhuju.broken_scroll_zither": "Broken Scroll: Listening to a Zither",
+  "item.meilanzhuju.hanging_scroll_zither": "Scroll: Listening to a Zither",
   "block.meilanzhuju.reading_table": "Reading Table",
 
+  "item.meilanzhuju.rice_seeds": "Rice Seeds",
 
+  "item.meilanzhuju.cinnabar": "Cinnabar",
   "block.meilanzhuju.cinnabar_ore": "Cinnabar Ore",
-
   "item.meilanzhuju.bird_sketch": "Sketch of Bird",
   "item.meilanzhuju.portrait_sketch": "Sketch of Portrait",
   "item.meilanzhuju.mountain_sketch": "Sketch of Mountain",
-  "item.meilanzhuju.broken_scroll_zither": "Broken Scroll: Listening to a Zither",
 
-  "block.meilanzhuju.rice_seeds": "Rice Seeds",
 
-  "block.meilanzhuju.dried_bamboo": "Dried Bamboo",
+
+
+
 
   "meilanzhuju.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "meilanzhuju.tooltip.liquid.amount": "%s mB"

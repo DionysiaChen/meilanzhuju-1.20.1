@@ -32,7 +32,6 @@ public class ReadingTableRecipeBuilder implements RecipeBuilder {
         this.count = pCount;
     }
 
-
     @Override
     public RecipeBuilder unlockedBy(String pCriterionName, CriterionTriggerInstance pCriterionTrigger) {
         this.advancement.addCriterion(pCriterionName, pCriterionTrigger);

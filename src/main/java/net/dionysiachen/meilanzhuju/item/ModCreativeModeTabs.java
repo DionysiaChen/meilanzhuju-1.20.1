@@ -18,44 +18,45 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.INK_BRUSH.get()))
                     .title(Component.translatable("creativetab.meilanzhuju_tab"))
                     .displayItems((pParameters, pOutput) -> {
-                        //Trees
-                        pOutput.accept(ModBlocks.PTEROCELTIS_SAPLING.get());
+                        //Logs, woods and planks
                         pOutput.accept(ModBlocks.PTEROCELTIS_LOG.get());
-                        pOutput.accept(ModBlocks.PTEROCELTIS_WOOD.get());
                         pOutput.accept(ModBlocks.STRIPPED_PTEROCELTIS_LOG.get());
+                        pOutput.accept(ModBlocks.TUNG_LOG.get());
+                        pOutput.accept(ModBlocks.PTEROCELTIS_WOOD.get());
                         pOutput.accept(ModBlocks.STRIPPED_PTEROCELTIS_WOOD.get());
                         pOutput.accept(ModBlocks.PTEROCELTIS_PLANKS.get());
-                        pOutput.accept(ModBlocks.PTEROCELTIS_LEAVES.get());
-                        pOutput.accept(ModItems.PTEROCELTIS_BARK.get());
-
-                        pOutput.accept(ModItems.TUNG_FRUIT.get());
-                        pOutput.accept(ModBlocks.TUNG_SAPLING.get());
-                        pOutput.accept(ModBlocks.TUNG_LOG.get());
                         pOutput.accept(ModBlocks.TUNG_PLANKS.get());
-                        pOutput.accept(ModBlocks.TUNG_LEAVES.get());
 
-                        //Brush related
+                        //Saplings, leaves, tree misc
+                        pOutput.accept(ModBlocks.PTEROCELTIS_SAPLING.get());
+                        pOutput.accept(ModBlocks.TUNG_SAPLING.get());
+                        pOutput.accept(ModBlocks.PTEROCELTIS_LEAVES.get());
+                        pOutput.accept(ModBlocks.TUNG_LEAVES.get());
+                        pOutput.accept(ModItems.PTEROCELTIS_BARK.get());
+                        pOutput.accept(ModItems.TUNG_FRUIT.get());
+
+                        //The four treasures
                         pOutput.accept(ModItems.INK_BRUSH.get());
+                        pOutput.accept(ModItems.INKSTICK.get());
+                        pOutput.accept(ModItems.XUAN_PAPER.get());
+                        pOutput.accept(ModItems.INKSTONE.get());
                         pOutput.accept(ModItems.GOAT_WOOL.get());
 
-                        //Ink related
-                        pOutput.accept(ModItems.INKSTICK.get());
-                        pOutput.accept(ModItems.INK_MODEL.get());
+                        //Materials
                         pOutput.accept(ModItems.TUNG_OIL.get());
                         pOutput.accept(ModItems.TUNG_OIL_SMOKE.get());
                         pOutput.accept(ModItems.GELATIN.get());
+                        pOutput.accept(ModItems.STRAW.get());
+                        pOutput.accept(ModItems.DRIED_BAMBOO.get());
 
+                        //Functional blocks and items
                         pOutput.accept(ModBlocks.OIL_LAMP.get());
                         pOutput.accept(ModItems.OIL_LAMP_CAP.get());
                         pOutput.accept(ModBlocks.STOCK_POT.get());
                         pOutput.accept(ModBlocks.PRESS.get());
+                        pOutput.accept(ModItems.INK_MODEL.get());
 
-                        //Paper related
-                        pOutput.accept(ModItems.XUAN_PAPER.get());
-                        pOutput.accept(ModItems.STRAW.get());
-
-                        //Inkstone related
-                        pOutput.accept(ModItems.INKSTONE.get());
+                        //Ores
                         pOutput.accept(ModItems.RAW_JADE.get());
                         pOutput.accept(ModBlocks.SAND_WITH_RAW_JADE.get());
 
@@ -74,8 +75,6 @@ public class ModCreativeModeTabs {
                         //pOutput.accept(ModItems.BIRD_SKETCH.get());
                         //pOutput.accept(ModItems.PORTRAIT_SKETCH.get());
                         //pOutput.accept(ModItems.MOUNTAIN_SKETCH.get());
-
-                        pOutput.accept(ModItems.DRIED_BAMBOO.get());
 
                         //Test items
                         //pOutput.accept(ModItems.TEST_CROP_TOOL.get());

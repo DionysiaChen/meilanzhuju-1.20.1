@@ -1,11 +1,7 @@
 {
   "values": [
     {
-      "id": "meilanzhuju:bird",
-      "required": false
-    },
-    {
-      "id": "meilanzhuju:music",
+      "id": "meilanzhuju:zither",
       "required": false
     }
   ]

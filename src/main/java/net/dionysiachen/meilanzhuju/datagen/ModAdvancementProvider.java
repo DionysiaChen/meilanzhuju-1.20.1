@@ -25,5 +25,6 @@ public class ModAdvancementProvider implements ForgeAdvancementProvider.Advancem
                         true, true, false))
                 .addCriterion("has_rice_seed", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RICE_SEEDS.get()))
                 .save(saver, new ResourceLocation(MEILANZHUJU.MOD_ID, "rice_seeds"), existingFileHelper);
+
     }
 }

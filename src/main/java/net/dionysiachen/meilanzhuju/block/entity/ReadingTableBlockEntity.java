@@ -50,6 +50,7 @@ public class ReadingTableBlockEntity extends BlockEntity implements MenuProvider
         }
     };
 
+    private static final int INPUT_SLOT = 4;
     private static final int OUTPUT_SLOT = 5;
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     protected final ContainerData data;
@@ -151,7 +152,7 @@ public class ReadingTableBlockEntity extends BlockEntity implements MenuProvider
         ItemStack resultItem = recipe.get().getResultItem(getLevel().registryAccess());
 
         //TODO: functions
-        //this.itemHandler.extractItem(INPUT_SLOT, 1, false);
+        this.itemHandler.extractItem(INPUT_SLOT, 1, false);
         this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(resultItem.getItem(),
                 this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + resultItem.getCount()));
     }
@@ -166,10 +167,21 @@ public class ReadingTableBlockEntity extends BlockEntity implements MenuProvider
 
     private boolean hasRecipe() {
         Optional<ReadingTableRecipe> recipe = getCurrentRecipe();
-        if (recipe.isEmpty()) {return false;}
+
+        if (recipe.isEmpty() || !hasTools()) {return false;}
         ItemStack resultItem = recipe.get().getResultItem(getLevel().registryAccess());
         return canInsertAmountIntoOutputSlot(resultItem.getCount())
                 && canInsertItemIntoOutputSlot(resultItem.getItem());
+    }
+
+    private boolean hasTools() {
+        SimpleContainer inv = new SimpleContainer(this.itemHandler.getSlots());
+        boolean check0 = inv.getItem(0).is(ModItems.INK_BRUSH.get());
+        boolean check1 = inv.getItem(1).is(ModItems.INKSTICK.get());
+        boolean check2 = inv.getItem(2).is(ModItems.XUAN_PAPER.get());
+        boolean check3 = inv.getItem(3).is(ModItems.INKSTONE.get());
+
+        return check0 && check1 && check2 && check3;
     }
 
     private Optional<ReadingTableRecipe> getCurrentRecipe() {

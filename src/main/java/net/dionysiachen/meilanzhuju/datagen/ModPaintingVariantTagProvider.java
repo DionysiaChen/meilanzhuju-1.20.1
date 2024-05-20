@@ -18,6 +18,6 @@ public class ModPaintingVariantTagProvider extends PaintingVariantTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(PaintingVariantTags.PLACEABLE)
                 //.addOptional(new ResourceLocation(MEILANZHUJU.MOD_ID, "bird"))
-                .addOptional(new ResourceLocation(MEILANZHUJU.MOD_ID,"music"));
+                .addOptional(new ResourceLocation(MEILANZHUJU.MOD_ID,"zither"));
     }
 }

@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-19T05:31:58.6365483	Item Models: meilanzhuju
+// 1.20.1	2024-05-20T02:53:30.4838321	Item Models: meilanzhuju
 268764440557d51c40bc605d2d36ba657927f396 assets/meilanzhuju/models/item/bird_sketch.json
 befa689d162f45142874d7e8422be00caada0435 assets/meilanzhuju/models/item/broken_scroll_zither.json
 eec4520e31e24d34f1a5b0644e96e156a9b3acf6 assets/meilanzhuju/models/item/cinnabar.json
@@ -6,6 +6,7 @@ eec4520e31e24d34f1a5b0644e96e156a9b3acf6 assets/meilanzhuju/models/item/cinnabar
 f612089edf2a69e5bc245087a100ea6b75edd0e7 assets/meilanzhuju/models/item/dried_lacquer.json
 cedb09720aef4c06114478b2a2e0691e32112a3f assets/meilanzhuju/models/item/gelatin.json
 5af4bbb940bf4f2598c7a3c583004b1ee218075a assets/meilanzhuju/models/item/goat_wool.json
+ee9ab4d393251eaf6b2b58fd09a5e1099dff4a3e assets/meilanzhuju/models/item/hanging_scroll_zither.json
 c0dab6d8df18951f99d9b606b461d5803cd2cc44 assets/meilanzhuju/models/item/inkstick.json
 7f5ef4527082a0ab950f45837f7064659d9399ad assets/meilanzhuju/models/item/inkstone.json
 524c1f8554b30285da72db7c4086877f2a157359 assets/meilanzhuju/models/item/ink_brush.json
@@ -16,6 +17,7 @@ cc029e39d8d2da2b62088624320f7b88d127a6f6 assets/meilanzhuju/models/item/mountain
 7ca5789c16fb02a68d7f123663d195e37f2df155 assets/meilanzhuju/models/item/portrait_sketch.json
 23dea8366149eb9934fc072d95e1c560db6657f3 assets/meilanzhuju/models/item/pteroceltis_bark.json
 23d229c56370b2dbd940bf6ad67111634515f9d8 assets/meilanzhuju/models/item/pteroceltis_sapling.json
+61552ff5c49be33b49635cf78f4c200bc3486966 assets/meilanzhuju/models/item/raw_jade.json
 f5a6698a146e12b0cbc3887949e36843733da740 assets/meilanzhuju/models/item/rice_seeds.json
 8288825d45ae1c7a68cc4af844ddd9c6b2ae2d28 assets/meilanzhuju/models/item/straw.json
 79b6836e088ff897f5de444958e6ea497f730221 assets/meilanzhuju/models/item/tung_fruit.json

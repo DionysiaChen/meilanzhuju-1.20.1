@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-18T14:48:14.0908845	Recipes
+// 1.20.1	2024-05-20T02:53:30.4838321	Recipes
 677a2dfc585ba6eb9855504dd718b6b577f90c90 data/meilanzhuju/advancements/recipes/building_blocks/pteroceltis_planks.json
 123cb17484f63cb989e76f4dc69d9261c3c451ca data/meilanzhuju/advancements/recipes/building_blocks/pteroceltis_wood.json
 9e03718b96cc4e5beb6eb9aaec0da5b2ea5c3b0d data/meilanzhuju/advancements/recipes/decorations/reading_table.json
@@ -19,7 +19,7 @@ cc4222d6adde4a1f19eacc216e204160f1d16f82 data/meilanzhuju/advancements/recipes/m
 64c160b900207d2722abc0230e2e144e12411dac data/meilanzhuju/recipes/dried_bamboo.json
 405d0f2998f45d238ff02d7ba27f85c41cffa5ce data/meilanzhuju/recipes/gelatin.json
 fa3c028633318afadd0587edbe840512dfb9f8d6 data/meilanzhuju/recipes/hanging_scroll_zither.json
-36082c8c442d269f3304a2db7cc1b48488264a6f data/meilanzhuju/recipes/inkstick.json
+c8f5f0504fd06e033c7ccff867735c68f50c9664 data/meilanzhuju/recipes/inkstick.json
 61abb20afc109be7cfb74d0a160978cd23cbdbd1 data/meilanzhuju/recipes/inkstone.json
 9429215a0f857ad0546d45f3706bcbacace7481f data/meilanzhuju/recipes/ink_brush.json
 dc858c2219d6ec3eac705fa6a0bcf56943b91ff4 data/meilanzhuju/recipes/ink_model.json

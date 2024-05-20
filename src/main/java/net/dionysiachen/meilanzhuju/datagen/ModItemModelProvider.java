@@ -19,35 +19,39 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(ModItems.BROKEN_SCROLL_ZITHER);
+
         saplingItem(ModBlocks.PTEROCELTIS_SAPLING);
         simpleItem(ModItems.TUNG_FRUIT);
         saplingItem(ModBlocks.TUNG_SAPLING);
+        simpleItem(ModItems.PTEROCELTIS_BARK);
 
         simpleItem(ModItems.INK_BRUSH);
-
+        simpleItem(ModItems.INKSTONE);
         simpleItem(ModItems.INKSTICK);
-        simpleItem(ModItems.TUNG_OIL);
+        simpleItem(ModItems.XUAN_PAPER);
+
         simpleItem(ModItems.OIL_LAMP_CAP);
-        simpleItem(ModItems.TUNG_OIL_SMOKE);
-        simpleItem(ModItems.GELATIN);
+
+        simpleItem(ModItems.TUNG_OIL);
         simpleItem(ModItems.INK_MODEL);
 
-        simpleItem(ModItems.XUAN_PAPER);
-        simpleItem(ModItems.PTEROCELTIS_BARK);
-        simpleItem(ModItems.RICE_SEEDS);
+        simpleItem(ModItems.TUNG_OIL_SMOKE);
+        simpleItem(ModItems.GELATIN);
         simpleItem(ModItems.STRAW);
+        simpleItem(ModItems.DRIED_BAMBOO);
+        simpleItem(ModItems.GOAT_WOOL);
 
-        simpleItem(ModItems.INKSTONE);
+        simpleItem(ModItems.RICE_SEEDS);
 
         simpleItem(ModItems.CINNABAR);
         simpleItem(ModItems.LACQUER);
-        simpleItem(ModItems.GOAT_WOOL);
+        simpleItem(ModItems.RAW_JADE);
+
         simpleItem(ModItems.BIRD_SKETCH);
         simpleItem(ModItems.PORTRAIT_SKETCH);
         simpleItem(ModItems.MOUNTAIN_SKETCH);
-
-        simpleItem(ModItems.DRIED_BAMBOO);
+        simpleItem(ModItems.BROKEN_SCROLL_ZITHER);
+        simpleItem(ModItems.HANGING_SCROLL_ZITHER);
 
         withExistingParent(ModItems.MUSK_DEER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 

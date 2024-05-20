@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class PressBlock extends BaseEntityBlock {
     public PressBlock(Properties pProperties) {super(pProperties);}
-    public static final VoxelShape SHAPE = Block.box(2,0,2,14,8,14);
+    public static final VoxelShape SHAPE = Block.box(0,0,0,16,16,16);
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE;}

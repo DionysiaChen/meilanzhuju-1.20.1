@@ -53,8 +53,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.INKSTICK.get(), 1)
                 .requires(ModItems.INK_MODEL.get())
-                .requires(ModItems.TUNG_OIL_SMOKE.get(), 32)
-                .requires(ModItems.GELATIN.get(), 16)
+                .requires(ModItems.TUNG_OIL_SMOKE.get())
+                .requires(ModItems.GELATIN.get())
                 .unlockedBy(getHasName(ModItems.TUNG_OIL_SMOKE.get()), has(ModItems.TUNG_OIL_SMOKE.get()))
                 .save(pWriter);
 

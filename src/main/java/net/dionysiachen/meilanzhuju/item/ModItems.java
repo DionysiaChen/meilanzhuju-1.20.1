@@ -21,7 +21,7 @@ public class ModItems {
     public static final RegistryObject<Item> BROKEN_SCROLL_ZITHER = ITEMS.register("broken_scroll_zither",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> HANGING_SCROLL_ZITHER = ITEMS.register("hanging_scroll_zither",
-            () -> new HangingScrollItem(EntityType.PAINTING, new  Item.Properties()));
+            () -> new HangingScrollItem(EntityType.PAINTING, new Item.Properties()));
     public static final RegistryObject<Item> READING_TABLE = ITEMS.register("reading_table",
             () -> new BlockItem(ModBlocks.READING_TABLE.get(), new Item.Properties()));
 
