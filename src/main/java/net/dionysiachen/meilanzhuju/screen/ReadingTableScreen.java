@@ -35,7 +35,7 @@ public class ReadingTableScreen extends AbstractContainerScreen<ReadingTableMenu
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if(menu.isCrafting()) {
-            guiGraphics.blit(TEXTURE, x + 84, y + 35, 176, 0, menu.getScaledProgress(), 8);
+            guiGraphics.blit(TEXTURE, x + 87, y + 35, 176, 0, menu.getScaledProgress(), 15);
         }
     }
 

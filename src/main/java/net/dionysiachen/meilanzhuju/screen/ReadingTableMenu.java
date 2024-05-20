@@ -32,12 +32,12 @@ public class ReadingTableMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
-            this.addSlot(new SlotItemHandler(iItemHandler, 0, 29, 25));
-            this.addSlot(new SlotItemHandler(iItemHandler, 1, 47, 25));
-            this.addSlot(new SlotItemHandler(iItemHandler, 2, 29, 43));
-            this.addSlot(new SlotItemHandler(iItemHandler, 3, 47, 43));
-            this.addSlot(new SlotItemHandler(iItemHandler, 4, 66, 35));
-            this.addSlot(new SlotItemHandler(iItemHandler, 5, 115, 35));
+            this.addSlot(new SlotItemHandler(iItemHandler, 0, 30, 25));
+            this.addSlot(new SlotItemHandler(iItemHandler, 1, 48, 25));
+            this.addSlot(new SlotItemHandler(iItemHandler, 2, 30, 43));
+            this.addSlot(new SlotItemHandler(iItemHandler, 3, 48, 43));
+            this.addSlot(new SlotItemHandler(iItemHandler, 4, 67, 35));
+            this.addSlot(new SlotItemHandler(iItemHandler, 5, 116, 35));
         });
 
         addDataSlots(data);
@@ -51,7 +51,7 @@ public class ReadingTableMenu extends AbstractContainerMenu {
     public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);
-        int progressArrowSize = 26;
+        int progressArrowSize = 22;
 
         return maxProgress != 0 && progress !=0 ? progress * progressArrowSize / maxProgress : 0;
     }

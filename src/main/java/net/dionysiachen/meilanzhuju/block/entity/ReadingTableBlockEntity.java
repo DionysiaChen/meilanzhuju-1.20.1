@@ -175,20 +175,19 @@ public class ReadingTableBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private boolean hasTools() {
-        SimpleContainer inv = new SimpleContainer(this.itemHandler.getSlots());
-        boolean check0 = inv.getItem(0).is(ModItems.INK_BRUSH.get());
-        boolean check1 = inv.getItem(1).is(ModItems.INKSTICK.get());
-        boolean check2 = inv.getItem(2).is(ModItems.XUAN_PAPER.get());
-        boolean check3 = inv.getItem(3).is(ModItems.INKSTONE.get());
+
+        boolean check0 = this.itemHandler.getStackInSlot(0).is(ModItems.INK_BRUSH.get());
+        boolean check1 = this.itemHandler.getStackInSlot(1).is(ModItems.INKSTICK.get());
+        boolean check2 = this.itemHandler.getStackInSlot(2).is(ModItems.XUAN_PAPER.get());
+        boolean check3 = this.itemHandler.getStackInSlot(3).is(ModItems.INKSTONE.get());
 
         return check0 && check1 && check2 && check3;
     }
 
     private Optional<ReadingTableRecipe> getCurrentRecipe() {
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
-        for (int i = 0; i < this.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
-        }
+        inventory.setItem(0, this.itemHandler.getStackInSlot(4));
+
         return this.level.getRecipeManager().getRecipeFor(ReadingTableRecipe.Type.INSTANCE, inventory, level);
     }
 
